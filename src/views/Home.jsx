@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PillButton from '../components/PillButton'
 import kernHomeImg from '../assets/kern-home.jpg'
 
 // Colores de marca usados (desde el logo):
@@ -35,20 +36,8 @@ const Home = () => {
 
               {/* Botones separados con forma redondeada */}
               <div className="mt-8 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                <Link
-                  to="/contacto"
-                  className="px-8 py-4 rounded-full font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
-                  aria-label="Contactar con Kern-it"
-                >
-                  Contactarme
-                </Link>
-                <Link
-                  to="/nosotros"
-                  className="px-8 py-4 rounded-full font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
-                  aria-label="Conocer más sobre Kern-it"
-                >
-                  Conocer más
-                </Link>
+                <PillButton to="/contacto" variant="primary" aria-label="Contactar con Kern-it">Contactarme</PillButton>
+                <PillButton to="/nosotros" variant="secondary" aria-label="Conocer más sobre Kern-it">Conocer más</PillButton>
               </div>
             </div>
 

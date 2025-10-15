@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import PillButton from '../components/PillButton'
 
 // Colores de marca
 // Primario: #D94B45 | Secundario: #9BA6A1
@@ -103,20 +104,8 @@ const ProductCard = ({ p, index }) => {
           )}
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={p.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-colors"
-            >
-              Descargar PDF
-            </a>
-            <Link
-              to="/contacto"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-[#D94B45] bg-white border border-[#D94B45]/30 hover:border-[#D94B45] hover:bg-[#D94B45]/5 transition-colors"
-            >
-              Consultar
-            </Link>
+            <PillButton href={p.pdf} target="_blank" rel="noopener noreferrer" variant="primary">Descargar PDF</PillButton>
+            <PillButton to="/contacto" variant="secondary">Consultar</PillButton>
           </div>
         </div>
       </div>
@@ -257,12 +246,7 @@ const Productos = () => {
             Descargá las fichas técnicas o escribinos y armamos una demo enfocada en tus procesos.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              to="/contacto"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-colors"
-            >
-              Pedir una demo
-            </Link>
+            <PillButton to="/contacto" variant="primary">Pedir una demo</PillButton>
           </div>
         </div>
       </section>
