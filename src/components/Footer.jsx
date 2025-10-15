@@ -60,22 +60,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Enlaces</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-white/90 hover:text-white transition-colors hover:text-red-500">
+                <Link to="/" className=" text-white/90  transition-colors hover:text-red-500">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/nosotros" className="text-white/90 hover:text-white transition-colors hover:text-red-500">
+                <Link to="/nosotros" className="text-white/90  transition-colors hover:text-red-500">
                   Nosotros
                 </Link>
               </li>
               <li>
-                <Link to="/productos" className="text-white/90 hover:text-white transition-colors hover:text-red-500">
+                <Link to="/productos" className="text-white/90  transition-colors hover:text-red-500">
                   Productos
                 </Link>
               </li>
               <li>
-                <Link to="/contacto" className="text-white/90 hover:text-white transition-colors hover:text-red-500">
+                <Link to="/contacto" className="text-white/90 transition-colors hover:text-red-500">
                   Contacto
                 </Link>
               </li>
