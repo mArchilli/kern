@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+// Paleta de marca: Primario #D94B45, Secundario #9BA6A1
+
 const Contacto = () => {
   const [formData, setFormData] = useState({
     nombre: '',
@@ -9,232 +11,226 @@ const Contacto = () => {
     asunto: '',
     mensaje: ''
   })
+  const [errors, setErrors] = useState({})
+  const [status, setStatus] = useState({ submitting: false, sent: false })
+
+  const validate = () => {
+    const e = {}
+    if (!formData.nombre.trim()) e.nombre = 'Ingresa tu nombre.'
+    if (!formData.email.trim()) e.email = 'Ingresa tu email.'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) e.email = 'Email inválido.'
+    if (!formData.asunto.trim()) e.asunto = 'Selecciona un asunto.'
+    if (!formData.mensaje.trim()) e.mensaje = 'Escribe tu mensaje.'
+    setErrors(e)
+    return Object.keys(e).length === 0
+  }
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: undefined })
+    }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Aquí iría la lógica para enviar el formulario
-    alert('¡Gracias por tu mensaje! Te contactaremos pronto.')
-    setFormData({
-      nombre: '',
-      email: '',
-      telefono: '',
-      asunto: '',
-      mensaje: ''
-    })
+    if (!validate()) return
+    setStatus({ submitting: true, sent: false })
+
+    // Fallback sin backend: usar mailto para abrir el cliente de correo
+    const to = 'info@kern-it.global'
+    const subject = encodeURIComponent(`Consulta desde sitio - ${formData.asunto}`)
+    const bodyLines = [
+      `Nombre: ${formData.nombre}`,
+      `Email: ${formData.email}`,
+      `Teléfono: ${formData.telefono || '-'}\n`,
+      'Mensaje:',
+      formData.mensaje
+    ]
+    const body = encodeURIComponent(bodyLines.join('\n'))
+    const mailto = `mailto:${to}?subject=${subject}&body=${body}`
+
+    // Abrir cliente de correo
+    window.location.href = mailto
+
+    // Simular finalización para feedback de UI
+    setTimeout(() => {
+      setStatus({ submitting: false, sent: true })
+      setFormData({ nombre: '', email: '', telefono: '', asunto: '', mensaje: '' })
+    }, 600)
+
+    // Integración opcional (EmailJS, Formspree, API propia):
+    // - EmailJS: instalar y configurar claves, luego enviar template con formData.
+    // - API propia: implementar endpoint POST /contacto y hacer fetch con formData.
   }
 
   return (
-    <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-            <span className="text-indigo-600">Contacto</span>
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Estamos aquí para ayudarte. ¡No dudes en ponerte en contacto con nosotros!
-          </p>
-        </div>
+    <div className="bg-white text-gray-800">
+      {/* Hero + Formulario (estilo vidrio) */}
+      <section className="relative overflow-hidden py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        {/* Deco suaves para dar fondo al vidrio */}
+        <div className="pointer-events-none absolute -top-28 -left-28 w-[32rem] h-[32rem] rounded-full bg-[#D94B45]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-[#9BA6A1]/10 blur-3xl" />
+        {/* Nuevos blobs azules, esquina inferior derecha, fuera del formulario */}
+        <div className="pointer-events-none absolute -bottom-10 right-16 w-[26rem] h-[26rem] rounded-full bg-[#3B82F6]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 right-0 w-[20rem] h-[20rem] rounded-full bg-[#3B82F6]/10 blur-3xl" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Información de contacto */}
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Información de Contacto</h2>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-indigo-600 rounded-md flex items-center justify-center">
-                    <span className="text-white font-bold">📍</span>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">Dirección</h3>
-                  <p className="text-gray-600">
-                    Av. Principal 123, Piso 5<br />
-                    Ciudad, País 12345
-                  </p>
-                </div>
-              </div>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-gray-900">Conectemos para potenciar tu laboratorio</h1>
+            <p className="mt-4 text-lg text-gray-600">Contanos en qué estás y diseñamos juntos un plan para mejorar la experiencia del paciente.</p>
+          </div>
 
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-indigo-600 rounded-md flex items-center justify-center">
-                    <span className="text-white font-bold">📞</span>
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            {/* Info breve */}
+            <div className="lg:col-span-5 order-2 lg:order-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+                <div className="rounded-2xl bg-white border border-[#E7EBEA] p-6">
+                  <div className="text-sm text-gray-500">Email</div>
+                  <a href="mailto:info@kern-it.global" className="mt-1 inline-block font-semibold text-gray-900 hover:text-[#D94B45]">info@kern-it.global</a>
+                </div>
+                <div className="rounded-2xl bg-white border border-[#E7EBEA] p-6">
+                  <div className="text-sm text-gray-500">Horario</div>
+                  <div className="mt-1 font-semibold text-gray-900">Lun a Vie, 9 a 18 hs</div>
+                </div>
+                <div className="rounded-2xl bg-white border border-[#E7EBEA] p-6">
+                  <div className="text-sm text-gray-500">Presencia</div>
+                  <div className="mt-1 font-semibold text-gray-900">LATAM y Estados Unidos</div>
+                </div>
+                <div className="rounded-2xl bg-white border border-[#E7EBEA] p-6">
+                  <div className="text-sm text-gray-500">Seguinos</div>
+                  <div className="mt-1 flex gap-4 text-gray-900">
+                    <a href="#" className="hover:text-[#D94B45]">LinkedIn</a>
+                    <a href="#" className="hover:text-[#D94B45]">Instagram</a>
+                    <a href="#" className="hover:text-[#D94B45]">X</a>
                   </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">Teléfono</h3>
-                  <p className="text-gray-600">
-                    +1 (555) 123-4567<br />
-                    +1 (555) 987-6543
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-indigo-600 rounded-md flex items-center justify-center">
-                    <span className="text-white font-bold">✉️</span>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                  <p className="text-gray-600">
-                    info@kernit.com<br />
-                    support@kernit.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-indigo-600 rounded-md flex items-center justify-center">
-                    <span className="text-white font-bold">🕒</span>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">Horarios de Atención</h3>
-                  <p className="text-gray-600">
-                    Lunes a Viernes: 9:00 AM - 6:00 PM<br />
-                    Sábados: 10:00 AM - 4:00 PM<br />
-                    Domingos: Cerrado
-                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Síguenos en Redes Sociales</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="text-indigo-600 hover:text-indigo-800">Facebook</a>
-                <a href="#" className="text-indigo-600 hover:text-indigo-800">Twitter</a>
-                <a href="#" className="text-indigo-600 hover:text-indigo-800">Instagram</a>
-                <a href="#" className="text-indigo-600 hover:text-indigo-800">LinkedIn</a>
+            {/* Formulario con efecto vidrio */}
+            <div className="lg:col-span-7 order-1 lg:order-2">
+              <div className="relative rounded-2xl bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 p-8 sm:p-10">
+                {/* Borde de luz */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/40" />
+                <h2 className="text-2xl font-semibold text-gray-900">Envíanos un mensaje</h2>
+                <p className="mt-1 text-sm text-gray-700">Te responderemos a la brevedad. Los campos marcados con * son obligatorios.</p>
+
+                <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-5">
+                  <div>
+                    <label htmlFor="nombre" className="block text-sm font-medium text-gray-800">Nombre completo *</label>
+                    <input
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      value={formData.nombre}
+                      onChange={handleChange}
+                      className={`mt-1 w-full px-3 py-2 rounded-md border ${errors.nombre ? 'border-red-500' : 'border-white/60'} bg-white/70 backdrop-blur-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D94B45]`}
+                      placeholder="Tu nombre completo"
+                    />
+                    {errors.nombre && <p className="mt-1 text-xs text-red-600">{errors.nombre}</p>}
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-800">Correo electrónico *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className={`mt-1 w-full px-3 py-2 rounded-md border ${errors.email ? 'border-red-500' : 'border-white/60'} bg-white/70 backdrop-blur-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D94B45]`}
+                        placeholder="tu@email.com"
+                      />
+                      {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+                    </div>
+                    <div>
+                      <label htmlFor="telefono" className="block text-sm font-medium text-gray-800">Teléfono</label>
+                      <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        value={formData.telefono}
+                        onChange={handleChange}
+                        className="mt-1 w-full px-3 py-2 rounded-md border border-white/60 bg-white/70 backdrop-blur-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D94B45]"
+                        placeholder="+54 11 5555-5555"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="asunto" className="block text-sm font-medium text-gray-800">Asunto *</label>
+                    <select
+                      id="asunto"
+                      name="asunto"
+                      value={formData.asunto}
+                      onChange={handleChange}
+                      className={`mt-1 w-full px-3 py-2 rounded-md border ${errors.asunto ? 'border-red-500' : 'border-white/60'} bg-white/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#D94B45]`}
+                    >
+                      <option value="">Selecciona un asunto</option>
+                      <option value="Consulta de producto">Consulta de producto</option>
+                      <option value="Soporte técnico">Soporte técnico</option>
+                      <option value="Reclamo">Reclamo</option>
+                      <option value="Sugerencia">Sugerencia</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                    {errors.asunto && <p className="mt-1 text-xs text-red-600">{errors.asunto}</p>}
+                  </div>
+
+                  <div>
+                    <label htmlFor="mensaje" className="block text-sm font-medium text-gray-800">Mensaje *</label>
+                    <textarea
+                      id="mensaje"
+                      name="mensaje"
+                      rows="5"
+                      value={formData.mensaje}
+                      onChange={handleChange}
+                      className={`mt-1 w-full px-3 py-2 rounded-md border ${errors.mensaje ? 'border-red-500' : 'border-white/60'} bg-white/70 backdrop-blur-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D94B45]`}
+                      placeholder="Contanos brevemente en qué podemos ayudarte"
+                    />
+                    {errors.mensaje && <p className="mt-1 text-xs text-red-600">{errors.mensaje}</p>}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={status.submitting}
+                    className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-colors ${status.submitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  >
+                    {status.submitting ? 'Enviando…' : 'Enviar mensaje'}
+                  </button>
+
+                  {status.sent && (
+                    <div className="text-sm text-green-600">¡Gracias por tu mensaje! Abrimos tu cliente de correo para completar el envío.</div>
+                  )}
+                </form>
+
+                {/* Nota de integración */}
+                <p className="mt-6 text-xs text-gray-600">
+                  ¿Querés enviar el correo de forma directa desde el sitio? Podemos integrar EmailJS o un endpoint propio.
+                </p>
               </div>
             </div>
           </div>
-
-          {/* Formulario de contacto */}
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Envíanos un Mensaje</h2>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
-                  Nombre completo *
-                </label>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="Tu nombre completo"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Correo electrónico *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="tu@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-2">
-                  Teléfono
-                </label>
-                <input
-                  type="tel"
-                  id="telefono"
-                  name="telefono"
-                  value={formData.telefono}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="+1 (555) 123-4567"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="asunto" className="block text-sm font-medium text-gray-700 mb-2">
-                  Asunto *
-                </label>
-                <select
-                  id="asunto"
-                  name="asunto"
-                  value={formData.asunto}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                >
-                  <option value="">Selecciona un asunto</option>
-                  <option value="consulta-producto">Consulta sobre producto</option>
-                  <option value="soporte-tecnico">Soporte técnico</option>
-                  <option value="reclamo">Reclamo</option>
-                  <option value="sugerencia">Sugerencia</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-2">
-                  Mensaje *
-                </label>
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  rows="4"
-                  value={formData.mensaje}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="Escribe tu mensaje aquí..."
-                ></textarea>
-              </div>
-
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-indigo-600 text-white py-3 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors font-medium"
-                >
-                  Enviar Mensaje
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
+      </section>
 
-        <div className="mt-16 text-center">
-          <div className="bg-indigo-600 rounded-lg p-8 text-white">
-            <h2 className="text-2xl font-bold mb-4">¿Tienes alguna pregunta?</h2>
-            <p className="mb-6">Nuestro equipo está listo para ayudarte. No dudes en contactarnos.</p>
-            <Link 
-              to="/productos"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"
-            >
-              Ver Productos
-            </Link>
-          </div>
+      {/* Sección secundaria breve */}
+      {/* <section className="py-14 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { t: 'Respuesta rápida', d: 'Nos comprometemos a responderte dentro de las 24 hs hábiles.' },
+            { t: 'Acompañamiento experto', d: 'Especialistas en salud digital a tu disposición.' },
+            { t: 'Plan de acción', d: 'Definimos próximos pasos claros y medibles.' },
+          ].map((k) => (
+            <div key={k.t} className="rounded-xl border border-[#E7EBEA] bg-white p-6">
+              <div className="w-8 h-8 rounded-full bg-[#D94B45]/10 text-[#D94B45] flex items-center justify-center mb-3">•</div>
+              <h3 className="font-semibold text-gray-900">{k.t}</h3>
+              <p className="mt-1 text-sm text-gray-600">{k.d}</p>
+            </div>
+          ))}
         </div>
-      </div>
+      </section> */}
     </div>
   )
 }
