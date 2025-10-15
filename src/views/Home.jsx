@@ -81,7 +81,7 @@ const Home = () => {
       </section>
 
       {/* Secciones de valor */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F9F8] h-screen flex items-center">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F9F8] lg:min-h-screen lg:flex lg:items-center">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Prestaciones */}
@@ -145,7 +145,7 @@ const Home = () => {
       </section>
 
       {/* Pilares */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-white h-screen flex items-center">
+  <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-white lg:min-h-screen lg:flex lg:items-center">
         {/* Deco izquierda */}
         <div className="pointer-events-none absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-[#D94B45]/10 blur-3xl" />
         <div className="max-w-7xl mx-auto w-full">
@@ -201,7 +201,7 @@ const Home = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f172a] text-white h-screen flex items-center">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f172a] text-white lg:min-h-screen lg:flex lg:items-center">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Texto + beneficios */}
