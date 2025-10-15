@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Marca y propósito */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold tracking-tight">Kern IT</span>
+              <span className="text-2xl font-bold tracking-tight text-[#D94B45]">Kern IT</span>
             </div>
             <p className="text-white/90 mb-4 max-w-xl">
               Enfocados junto a los laboratorios de análisis clínicos para mejorar la calidad de atención al paciente.
@@ -57,25 +57,25 @@ const Footer = () => {
 
           {/* Enlaces rápidos */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Enlaces</h3>
+            <h3 className="text-lg font-semibold mb-4 text-[#D94B45]">Enlaces</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-white/90 hover:text-white transition-colors hover:text-red-500">
+                <Link to="/" className="text-white/90 hover:text-[#D94B45] transition-colors">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/nosotros" className="text-white/90 hover:text-white transition-colors hover:text-red-500">
+                <Link to="/nosotros" className="text-white/90 hover:text-[#D94B45] transition-colors">
                   Nosotros
                 </Link>
               </li>
               <li>
-                <Link to="/productos" className="text-white/90 hover:text-white transition-colors hover:text-red-500">
+                <Link to="/productos" className="text-white/90 hover:text-[#D94B45] transition-colors">
                   Productos
                 </Link>
               </li>
               <li>
-                <Link to="/contacto" className="text-white/90 hover:text-white transition-colors hover:text-red-500">
+                <Link to="/contacto" className="text-white/90 hover:text-[#D94B45] transition-colors">
                   Contacto
                 </Link>
               </li>
@@ -84,10 +84,10 @@ const Footer = () => {
 
           {/* Información de contacto */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Ubicación</h3>
+            <h3 className="text-lg font-semibold mb-4 text-[#D94B45]">Ubicación</h3>
             <ul className="space-y-3 text-white/90">
               <li className="flex items-start">
-                <svg className="h-5 w-5 mr-2 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <svg className="h-9 w-9 mr-2 -mt-1.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path fillRule="evenodd" d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" clipRule="evenodd" />
                 </svg>
                 Migueletes 1231 Piso 5 Depto A, Ciudad Autónoma de Buenos Aires – Argentina
