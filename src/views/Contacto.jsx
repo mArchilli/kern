@@ -3,69 +3,31 @@ import React, { useState } from 'react'
 // Paleta de marca: Primario #D94B45, Secundario #9BA6A1
 
 const Contacto = () => {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    telefono: '',
-    asunto: '',
-    mensaje: ''
-  })
-  const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState({ submitting: false, sent: false })
   const [copied, setCopied] = useState(false)
+  const [copiedEmail, setCopiedEmail] = useState(false)
 
   const address = 'Migueletes 1231 Piso 5 Depto A'
   const addressQuery = encodeURIComponent(address)
 
-  const validate = () => {
-    const e = {}
-    if (!formData.nombre.trim()) e.nombre = 'Ingresa tu nombre.'
-    if (!formData.email.trim()) e.email = 'Ingresa tu email.'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) e.email = 'Email inválido.'
-    if (!formData.asunto.trim()) e.asunto = 'Selecciona un asunto.'
-    if (!formData.mensaje.trim()) e.mensaje = 'Escribe tu mensaje.'
-    setErrors(e)
-    return Object.keys(e).length === 0
-  }
+  // Link a Gmail con mensaje prellenado
+  const emailTo = 'info@kern-it.global'
+  const emailSubject = 'Consulta desde el sitio web'
+  const emailBody = [
+    'Hola Kern IT,',
+    '',
+    'Me gustaría ponerme en contacto con ustedes para realizar una consulta sobre sus soluciones.',
+    '',
+    '• Nombre:',
+    '• Empresa:',
+    '• Teléfono:',
+    '• Comentario:',
+    '',
+    '¡Gracias!',
+  ].join('\n')
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-    if (errors[e.target.name]) {
-      setErrors({ ...errors, [e.target.name]: undefined })
-    }
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!validate()) return
-    setStatus({ submitting: true, sent: false })
-
-    // Fallback sin backend: usar mailto para abrir el cliente de correo
-    const to = 'info@kern-it.global'
-    const subject = encodeURIComponent(`Consulta desde sitio - ${formData.asunto}`)
-    const bodyLines = [
-      `Nombre: ${formData.nombre}`,
-      `Email: ${formData.email}`,
-      `Teléfono: ${formData.telefono || '-'}\n`,
-      'Mensaje:',
-      formData.mensaje
-    ]
-    const body = encodeURIComponent(bodyLines.join('\n'))
-    const mailto = `mailto:${to}?subject=${subject}&body=${body}`
-
-    // Abrir cliente de correo
-    window.location.href = mailto
-
-    // Simular finalización para feedback de UI
-    setTimeout(() => {
-      setStatus({ submitting: false, sent: true })
-      setFormData({ nombre: '', email: '', telefono: '', asunto: '', mensaje: '' })
-    }, 600)
-
-    // Integración opcional (EmailJS, Formspree, API propia):
-    // - EmailJS: instalar y configurar claves, luego enviar template con formData.
-    // - API propia: implementar endpoint POST /contacto y hacer fetch con formData.
-  }
+  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailTo)}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+  const outlookLink = `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(emailTo)}&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+  const yahooLink = `https://compose.mail.yahoo.com/?to=${encodeURIComponent(emailTo)}&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
 
   const handleCopyAddress = async () => {
     try {
@@ -82,6 +44,24 @@ const Contacto = () => {
       document.body.removeChild(textarea)
       setCopied(true)
       setTimeout(() => setCopied(false), 1500)
+    }
+  }
+
+  const handleCopyEmail = async () => {
+    const email = 'info@kern-it.global'
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopiedEmail(true)
+      setTimeout(() => setCopiedEmail(false), 1500)
+    } catch {
+      const textarea = document.createElement('textarea')
+      textarea.value = email
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      setCopiedEmail(true)
+      setTimeout(() => setCopiedEmail(false), 1500)
     }
   }
 
@@ -137,9 +117,6 @@ const Contacto = () => {
                     >
                       {copied ? 'Dirección copiada' : 'Copiar dirección'}
                     </button>
-                    <a href="mailto:info@kern-it.global" className="ml-auto text-sm text-gray-700 hover:text-[#D94B45]">
-                      info@kern-it.global
-                    </a>
                   </div>
                   <p className="text-xs text-gray-600">
                     Visitas con cita previa. Al llegar, anunciate en recepción y te indicarán el acceso al 5° piso.
@@ -148,107 +125,91 @@ const Contacto = () => {
               </div>
             </div>
 
-            {/* Formulario con efecto vidrio */}
+            {/* Información de contacto (reemplaza al formulario) */}
             <div className="lg:col-span-7 order-1 lg:order-2">
-              <div className="relative rounded-2xl bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 p-8 sm:p-10">
-                {/* Borde de luz */}
-                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/40" />
-                <h2 className="text-2xl font-semibold text-gray-900">Envíanos un mensaje</h2>
-                <p className="mt-1 text-sm text-gray-700">Te responderemos a la brevedad. Los campos marcados con * son obligatorios.</p>
+              <div className="relative rounded-2xl bg-white border border-[#E7EBEA] shadow-sm p-8 sm:p-10">
+                <h2 className="text-2xl font-semibold text-gray-900">Contacto directo</h2>
+                <p className="mt-2 text-gray-700">Elegí la vía que te quede más cómoda. Te respondemos dentro de las 24 hs hábiles.</p>
 
-                <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-5">
-                  <div>
-                    <label htmlFor="nombre" className="block text-sm font-medium text-gray-800">Nombre completo *</label>
-                    <input
-                      type="text"
-                      id="nombre"
-                      name="nombre"
-                      value={formData.nombre}
-                      onChange={handleChange}
-                      className={`mt-1 w-full px-3 py-2 rounded-md border ${errors.nombre ? 'border-red-500' : 'border-white/60'} bg-white/70 backdrop-blur-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D94B45]`}
-                      placeholder="Tu nombre completo"
-                    />
-                    {errors.nombre && <p className="mt-1 text-xs text-red-600">{errors.nombre}</p>}
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-800">Correo electrónico *</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className={`mt-1 w-full px-3 py-2 rounded-md border ${errors.email ? 'border-red-500' : 'border-white/60'} bg-white/70 backdrop-blur-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D94B45]`}
-                        placeholder="tu@email.com"
-                      />
-                      {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+                <div className="mt-6 space-y-5">
+                  <div className="rounded-xl border border-[#E7EBEA] p-5">
+                    <h3 className="font-semibold text-gray-900">Correo electrónico</h3>
+                    <p className="mt-1 text-sm text-gray-600">Escribinos y te contactamos a la brevedad.</p>
+                    <div className="mt-4 flex flex-wrap gap-3">
+                      <a
+                        href={gmailLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold  bg-white text-red-400 border border-red-400 hover:bg-red-400 hover:text-white transition-colors"
+                      >
+                        Escribir por Gmail
+                      </a>
+                      <a
+                        href={outlookLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-blue-400 bg-white border border-blue-400 hover:border-blue-500 hover:bg-blue-500 hover:text-white transition-colors"
+                      >
+                        Escribir por Outlook
+                      </a>
+                      <a
+                        href={yahooLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-purple-400 bg-white border border-purple-400 hover:border-purple-500 hover:bg-purple-500 hover:text-white transition-colors"
+                      >
+                        Escribir por Yahoo
+                      </a>
+                      
+                      <button
+                        type="button"
+                        onClick={handleCopyEmail}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-gray-700 bg-white border border-[#E7EBEA] hover:bg-gray-50"
+                      >
+                        {copiedEmail ? 'Correo copiado' : 'Copiar correo'}
+                      </button>
                     </div>
-                    <div>
-                      <label htmlFor="telefono" className="block text-sm font-medium text-gray-800">Teléfono</label>
-                      <input
-                        type="tel"
-                        id="telefono"
-                        name="telefono"
-                        value={formData.telefono}
-                        onChange={handleChange}
-                        className="mt-1 w-full px-3 py-2 rounded-md border border-white/60 bg-white/70 backdrop-blur-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D94B45]"
-                        placeholder="+54 11 5555-5555"
-                      />
+                
+                  </div>
+
+                  <div className="rounded-xl border border-[#E7EBEA] p-5">
+                    <h3 className="font-semibold text-gray-900">Redes sociales</h3>
+                    <p className="mt-1 text-sm text-gray-600">Seguinos y enterate de novedades y casos de éxito.</p>
+                    <div className="mt-3 flex flex-wrap gap-3">
+                      <a
+                        href="https://www.linkedin.com/company/kern-it-srl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white border border-[#E7EBEA] text-gray-800 hover:text-[#D94B45]"
+                      >
+                        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.9-2.2 3.9-2.2 4.2 0 5 2.8 5 6.4V24h-4v-7.2c0-1.7 0-3.8-2.3-3.8s-2.6 1.8-2.6 3.7V24h-4V8z" />
+                        </svg>
+                      </a>
+                      <a
+                        href="https://www.instagram.com/kernitsoftware"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white border border-[#E7EBEA] text-gray-800 hover:text-[#D94B45]"
+                      >
+                        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 1017.5 13 5.51 5.51 0 0012 7.5zm0 2A3.5 3.5 0 1115.5 13 3.5 3.5 0 0112 9.5zM18 6.3a1 1 0 11-1 1 1 1 0 011-1z" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
 
-                  <div>
-                    <label htmlFor="asunto" className="block text-sm font-medium text-gray-800">Asunto *</label>
-                    <select
-                      id="asunto"
-                      name="asunto"
-                      value={formData.asunto}
-                      onChange={handleChange}
-                      className={`mt-1 w-full px-3 py-2 rounded-md border ${errors.asunto ? 'border-red-500' : 'border-white/60'} bg-white/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#D94B45]`}
-                    >
-                      <option value="">Selecciona un asunto</option>
-                      <option value="Consulta de producto">Consulta de producto</option>
-                      <option value="Soporte técnico">Soporte técnico</option>
-                      <option value="Reclamo">Reclamo</option>
-                      <option value="Sugerencia">Sugerencia</option>
-                      <option value="Otro">Otro</option>
-                    </select>
-                    {errors.asunto && <p className="mt-1 text-xs text-red-600">{errors.asunto}</p>}
+                  <div className="rounded-xl border border-[#E7EBEA] p-5">
+                    <h3 className="font-semibold text-gray-900">Datos útiles</h3>
+                    <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                      <li>• Horario de atención: Lunes a Viernes, 9 a 18 hs (GMT-3).</li>
+                      <li>• Tiempo de respuesta habitual: dentro de las 24 hs hábiles.</li>
+                      <li>• Si preferís, coordinamos una videollamada a tu conveniencia.</li>
+                    </ul>
                   </div>
-
-                  <div>
-                    <label htmlFor="mensaje" className="block text-sm font-medium text-gray-800">Mensaje *</label>
-                    <textarea
-                      id="mensaje"
-                      name="mensaje"
-                      rows="5"
-                      value={formData.mensaje}
-                      onChange={handleChange}
-                      className={`mt-1 w-full px-3 py-2 rounded-md border ${errors.mensaje ? 'border-red-500' : 'border-white/60'} bg-white/70 backdrop-blur-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D94B45]`}
-                      placeholder="Contanos brevemente en qué podemos ayudarte"
-                    />
-                    {errors.mensaje && <p className="mt-1 text-xs text-red-600">{errors.mensaje}</p>}
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={status.submitting}
-                    className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-colors ${status.submitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                  >
-                    {status.submitting ? 'Enviando…' : 'Enviar mensaje'}
-                  </button>
-
-                  {status.sent && (
-                    <div className="text-sm text-green-600">¡Gracias por tu mensaje! Abrimos tu cliente de correo para completar el envío.</div>
-                  )}
-                </form>
-
-                {/* Nota de integración */}
-                <p className="mt-6 text-xs text-gray-600">
-                  ¿Querés enviar el correo de forma directa desde el sitio? Podemos integrar EmailJS o un endpoint propio.
-                </p>
+                </div>
               </div>
             </div>
           </div>
