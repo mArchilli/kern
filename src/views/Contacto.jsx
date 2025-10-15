@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 // Paleta de marca: Primario #D94B45, Secundario #9BA6A1
 
@@ -13,6 +12,10 @@ const Contacto = () => {
   })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState({ submitting: false, sent: false })
+  const [copied, setCopied] = useState(false)
+
+  const address = 'Migueletes 1231 Piso 5 Depto A'
+  const addressQuery = encodeURIComponent(address)
 
   const validate = () => {
     const e = {}
@@ -64,6 +67,24 @@ const Contacto = () => {
     // - API propia: implementar endpoint POST /contacto y hacer fetch con formData.
   }
 
+  const handleCopyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(address)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+  } catch {
+      // Fallback simple si Clipboard API no está disponible
+      const textarea = document.createElement('textarea')
+      textarea.value = address
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    }
+  }
+
   return (
     <div className="bg-white text-gray-800">
       {/* Hero + Formulario (estilo vidrio) */}
@@ -82,28 +103,47 @@ const Contacto = () => {
           </div>
 
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            {/* Info breve */}
+            {/* Mapa de Google reemplazando las cards */}
             <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-                <div className="rounded-2xl bg-white border border-[#E7EBEA] p-6">
-                  <div className="text-sm text-gray-500">Email</div>
-                  <a href="mailto:info@kern-it.global" className="mt-1 inline-block font-semibold text-gray-900 hover:text-[#D94B45]">info@kern-it.global</a>
+              <div className="relative rounded-2xl overflow-hidden border border-[#E7EBEA] bg-white shadow-sm">
+                <div className="p-4 border-b border-[#E7EBEA]">
+                  <h3 className="text-base font-semibold text-gray-900">Nuestra ubicación</h3>
+                  <p className="text-sm text-gray-600">{address}</p>
                 </div>
-                <div className="rounded-2xl bg-white border border-[#E7EBEA] p-6">
-                  <div className="text-sm text-gray-500">Horario</div>
-                  <div className="mt-1 font-semibold text-gray-900">Lun a Vie, 9 a 18 hs</div>
+                <div className="w-full h-[380px] sm:h-[440px] lg:h-[520px]">
+                  <iframe
+                    title="Mapa ubicación Kern IT"
+                    src={`https://www.google.com/maps?output=embed&hl=es&q=${addressQuery}&z=17&t=m`}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full"
+                  />
                 </div>
-                <div className="rounded-2xl bg-white border border-[#E7EBEA] p-6">
-                  <div className="text-sm text-gray-500">Presencia</div>
-                  <div className="mt-1 font-semibold text-gray-900">LATAM y Estados Unidos</div>
-                </div>
-                <div className="rounded-2xl bg-white border border-[#E7EBEA] p-6">
-                  <div className="text-sm text-gray-500">Seguinos</div>
-                  <div className="mt-1 flex gap-4 text-gray-900">
-                    <a href="#" className="hover:text-[#D94B45]">LinkedIn</a>
-                    <a href="#" className="hover:text-[#D94B45]">Instagram</a>
-                    <a href="#" className="hover:text-[#D94B45]">X</a>
+                <div className="p-4 space-y-3">
+                  <div className="flex flex-wrap items-center gap-3 text-sm">
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${addressQuery}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-md border border-[#E7EBEA] px-3 py-1.5 text-[#D94B45] hover:text-white hover:bg-[#D94B45] transition-colors"
+                    >
+                      Abrir en Google Maps
+                    </a>
+                    <button
+                      type="button"
+                      onClick={handleCopyAddress}
+                      className="inline-flex items-center gap-2 rounded-md border border-[#E7EBEA] px-3 py-1.5 text-gray-700 hover:bg-gray-50"
+                    >
+                      {copied ? 'Dirección copiada' : 'Copiar dirección'}
+                    </button>
+                    <a href="mailto:info@kern-it.global" className="ml-auto text-sm text-gray-700 hover:text-[#D94B45]">
+                      info@kern-it.global
+                    </a>
                   </div>
+                  <p className="text-xs text-gray-600">
+                    Visitas con cita previa. Al llegar, anunciate en recepción y te indicarán el acceso al 5° piso.
+                  </p>
                 </div>
               </div>
             </div>
