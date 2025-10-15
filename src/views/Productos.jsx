@@ -1,151 +1,164 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Productos = () => {
-  const [filtroCategoria, setFiltroCategoria] = useState('todos')
+// Colores de marca
+// Primario: #D94B45 | Secundario: #9BA6A1
 
+// Assets (imágenes y PDFs) importados desde src/assets/Productos
+import imgLis from '../assets/Productos/kern-logolis.jpg'
+import pdfLis from '../assets/Productos/ES-BROCHURE-LIS-plus.pdf'
+import imgBi from '../assets/Productos/kern-logobi.jpg'
+import pdfBi from '../assets/Productos/ES-BROCHURE-BI.pdf'
+import imgIx from '../assets/Productos/kern-logoix.jpg'
+import pdfIx from '../assets/Productos/ES-BROCHURE-IX.pdf'
+import imgAp from '../assets/Productos/kern-logoap.jpg'
+import pdfAp from '../assets/Productos/ES-BROCHURE-AP.pdf'
+
+const ImageWithFallback = ({ src, alt }) => {
+  const [error, setError] = useState(false)
+  return (
+    <div className="relative w-full h-48 bg-white overflow-hidden rounded-t-2xl">
+      {!error ? (
+        <img
+          src={src}
+          alt={alt}
+          onError={() => setError(true)}
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-[#F7F9F8] to-white flex items-center justify-center text-sm text-gray-500">
+          Imagen no disponible
+        </div>
+      )}
+    </div>
+  )
+}
+
+const Productos = () => {
   const productos = [
     {
-      id: 1,
-      nombre: "Laptop Gaming Pro",
-      precio: "$1,299",
-      categoria: "tecnologia",
-      imagen: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300&h=200&fit=crop",
-      descripcion: "Potente laptop para gaming con gráficos excepcionales"
+      id: 'kern-lis-plus',
+      nombre: 'KERN LIS+',
+      resumen:
+        'Abarca todos los procesos previos al inicio de los procesos analíticos en planta: Gestión de Pedidos, Gestión de Extracciones y Gestión de Muestras.',
+      tags: ['Preanalítico', 'Gestión de pedidos', 'Extracciones', 'Muestras'],
+      imagen: imgLis,
+      pdf: pdfLis,
     },
     {
-      id: 2,
-      nombre: "Auriculares Bluetooth",
-      precio: "$199",
-      categoria: "tecnologia",
-      imagen: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop",
-      descripcion: "Auriculares inalámbricos con cancelación de ruido"
+      id: 'kern-bi',
+      nombre: 'KERN BI',
+      resumen:
+        'Módulo de Inteligencia de Negocios para laboratorios. Permite generar dashboards gerenciales con información relevante abreviada.',
+      tags: ['Business Intelligence', 'Dashboards', 'KPIs'],
+      imagen: imgBi,
+      pdf: pdfBi,
     },
     {
-      id: 3,
-      nombre: "Camiseta Casual",
-      precio: "$29",
-      categoria: "ropa",
-      imagen: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop",
-      descripcion: "Camiseta cómoda de algodón 100% orgánico"
+      id: 'kern-ix',
+      nombre: 'KERN IX',
+      resumen:
+        'Motor de interfaces para salud. Plataforma de interoperabilidad entre sistemas Kern y de terceros; puede operar en modo stand-alone.',
+      tags: ['Interoperabilidad', 'Integraciones', 'HL7 / FHIR'],
+      imagen: imgIx,
+      pdf: pdfIx,
     },
     {
-      id: 4,
-      nombre: "Zapatillas Deportivas",
-      precio: "$89",
-      categoria: "ropa",
-      imagen: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=200&fit=crop",
-      descripcion: "Zapatillas perfectas para entrenamientos intensos"
+      id: 'kern-ap',
+      nombre: 'KERN AP',
+      resumen:
+        'Gestión para Anatomía Patológica: logística de muestras, rotulado de cassettes y cristales, trazabilidad completa e informes de intervenciones.',
+      tags: ['Anatomía Patológica', 'Trazabilidad', 'Informes'],
+      imagen: imgAp,
+      pdf: pdfAp,
     },
-    {
-      id: 5,
-      nombre: "Libro de Programación",
-      precio: "$45",
-      categoria: "libros",
-      imagen: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=200&fit=crop",
-      descripcion: "Guía completa para aprender desarrollo web moderno"
-    },
-    {
-      id: 6,
-      nombre: "Novela Bestseller",
-      precio: "$19",
-      categoria: "libros",
-      imagen: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=200&fit=crop",
-      descripcion: "La novela más vendida del año"
-    }
   ]
-
-  const categorias = [
-    { valor: 'todos', nombre: 'Todos los productos' },
-    { valor: 'tecnologia', nombre: 'Tecnología' },
-    { valor: 'ropa', nombre: 'Ropa' },
-    { valor: 'libros', nombre: 'Libros' }
-  ]
-
-  const productosFiltrados = filtroCategoria === 'todos' 
-    ? productos 
-    : productos.filter(producto => producto.categoria === filtroCategoria)
 
   return (
-    <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-            Nuestros <span className="text-indigo-600">Productos</span>
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Descubre nuestra amplia selección de productos de calidad
+    <div className="bg-white">
+      {/* Hero */}
+      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="pointer-events-none absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-[#D94B45]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-[#9BA6A1]/10 blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">Nuestros productos</h1>
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            Brindamos soluciones para el proceso completo preanalítico, módulo de extracción, autogestión por parte de los pacientes y pre check-in para optimizar los tiempos de atención.
           </p>
         </div>
+      </section>
 
-        {/* Filtros */}
-        <div className="mb-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categorias.map((categoria) => (
-              <button
-                key={categoria.valor}
-                onClick={() => setFiltroCategoria(categoria.valor)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  filtroCategoria === categoria.valor
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-indigo-50 border border-gray-300'
-                }`}
-              >
-                {categoria.nombre}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Grid de productos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {productosFiltrados.map((producto) => (
-            <div key={producto.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <img 
-                src={producto.imagen} 
-                alt={producto.nombre}
-                className="w-full h-48 object-cover"
-              />
+      {/* Grid productos */}
+      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-[#F7F9F8]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {productos.map((p) => (
+            <article
+              key={p.id}
+              className="group relative rounded-2xl bg-white border border-[#E7EBEA] shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+            >
+              <ImageWithFallback src={p.imagen} alt={p.nombre} />
               <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                    producto.categoria === 'tecnologia' ? 'bg-blue-100 text-blue-800' :
-                    producto.categoria === 'ropa' ? 'bg-green-100 text-green-800' :
-                    'bg-purple-100 text-purple-800'
-                  }`}>
-                    {categorias.find(c => c.valor === producto.categoria)?.nombre}
-                  </span>
-                  <span className="text-2xl font-bold text-indigo-600">{producto.precio}</span>
+                <h3 className="text-xl font-semibold text-gray-900">{p.nombre}</h3>
+                <p className="mt-2 text-gray-700 text-sm leading-relaxed">{p.resumen}</p>
+                {p.tags?.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="px-2.5 py-1 rounded-full text-xs font-medium bg-[#F2F5F4] text-gray-700 border border-[#E7EBEA]"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href={p.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-colors"
+                  >
+                    Descargar PDF
+                  </a>
+                  <Link
+                    to="/contacto"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-[#D94B45] bg-white border border-[#D94B45]/30 hover:border-[#D94B45] hover:bg-[#D94B45]/5 transition-colors"
+                  >
+                    Consultar
+                  </Link>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{producto.nombre}</h3>
-                <p className="text-gray-600 text-sm mb-4">{producto.descripcion}</p>
-                <button className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors">
-                  Agregar al Carrito
-                </button>
               </div>
-            </div>
+            </article>
           ))}
         </div>
+      </section>
 
-        {productosFiltrados.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No se encontraron productos en esta categoría.</p>
-          </div>
-        )}
-
-        <div className="mt-16 text-center">
-          <div className="bg-indigo-600 rounded-lg p-8 text-white">
-            <h2 className="text-2xl font-bold mb-4">¿No encontraste lo que buscabas?</h2>
-            <p className="mb-6">Contáctanos y te ayudaremos a encontrar el producto perfecto para ti.</p>
-            <Link 
+      {/* CTA Final */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto rounded-2xl border border-[#E7EBEA] p-8 sm:p-10 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">¿Querés conocer más en detalle?</h2>
+          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+            Descargá las fichas técnicas o escribinos y armamos una demo enfocada en tus procesos.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link
               to="/contacto"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-colors"
             >
-              Contactar
+              Pedir una demo
             </Link>
+            <a
+              href="/assets/Productos/"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-[#D94B45] bg-white border border-[#D94B45]/30 hover:border-[#D94B45] hover:bg-[#D94B45]/5 transition-colors"
+            >
+              Ver todos los PDFs
+            </a>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
