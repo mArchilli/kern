@@ -45,7 +45,7 @@ const Footer = () => {
               </a>
               <a
                 href="mailto:info@kern-it.global"
-                className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-white/90 hover:text-[#D94B45] transition-colors"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M2 6a2 2 0 012-2h16a2 2 0 012 2v.4l-10 6.25L2 6.4V6zm0 2.9l9.35 5.83a1 1 0 001.1 0L22 8.9V18a2 2 0 01-2 2H4a2 2 0 01-2-2V8.9z" />
