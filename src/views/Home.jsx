@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import kernHomeImg from '../assets/kern-home.jpg'
 
 // Colores de marca usados (desde el logo):
 // Primario (rojo): #D94B45
@@ -9,41 +10,41 @@ const Home = () => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero - Mobile First */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-[#fcfcfc] to-[#F5F7F6]">
-        {/* Decoraciones sutiles */}
-        <div className="pointer-events-none absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-[#D94B45]/5 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 left-0 w-72 h-72 sm:w-[28rem] sm:h-[28rem] rounded-full bg-[#9BA6A1]/10 blur-3xl" />
+      <section className="relative overflow-hidden min-h-[90vh] flex items-start py-8 px-4 sm:py-10 sm:px-6 lg:px-8 lg:pt-16 bg-gradient-to-br from-white via-white to-[#F5F7F6]">
+        {/* Gradiente decorativo rojo en esquina superior izquierda */}
+        <div className="pointer-events-none absolute top-0 left-0 w-[35rem] h-[35rem] rounded-full bg-[#D94B45]/15 blur-3xl -translate-x-1/3 -translate-y-1/3" />
 
         <div className="relative max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Grid principal: texto e imagen lado a lado en desktop */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-start mb-16">
             {/* Contenido principal */}
             <div className="text-center lg:text-left">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-gray-900 mb-6">
+                Mejorar la experiencia del paciente es nuestro objetivo
+              </h1>
+
               {/* Badge */}
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#D94B45]/10 border border-[#D94B45]/20 mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#D94B45] mr-2 animate-pulse" />
                 <span className="text-sm font-medium text-[#D94B45]">+20 años de experiencia en salud</span>
               </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-gray-900">
-                Mejorar la <span className="text-[#D94B45]">experiencia del paciente</span> es nuestro objetivo
-              </h1>
               
               <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
-                Somos tu partner para lograrlo. Kern-it conecta tecnología innovadora y atención de calidad para posicionar al paciente en primer plano.
+                Kern-it es el nexo para mejorar la calidad de atención y enriquecer la experiencia del paciente. A través de tecnología innovadora, acompañamos a nuestros clientes para posicionar al paciente en primer plano.
               </p>
 
-              {/* Botones con diseño compacto e integrado */}
-              <div className="mt-8 inline-flex items-center gap-3 p-1.5 rounded-full bg-gray-100 shadow-inner">
+              {/* Botones separados con forma redondeada */}
+              <div className="mt-8 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
                 <Link
                   to="/contacto"
-                  className="px-6 py-3 rounded-full font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-all duration-200 shadow-md hover:shadow-lg whitespace-nowrap"
+                  className="px-8 py-4 rounded-full font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
                   aria-label="Contactar con Kern-it"
                 >
                   Contactarme
                 </Link>
                 <Link
                   to="/nosotros"
-                  className="px-6 py-3 rounded-full font-semibold text-gray-700 hover:text-[#D94B45] hover:bg-white transition-all duration-200 whitespace-nowrap"
+                  className="px-8 py-4 rounded-full font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
                   aria-label="Conocer más sobre Kern-it"
                 >
                   Conocer más
@@ -51,29 +52,96 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Stats Cards - Mobile Optimized */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {[
-                { value: '+23M', label: 'pacientes anuales en LATAM', icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z' },
-                { value: '+840', label: 'puntos de extracción', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
-                { value: '+350M', label: 'estudios procesados anualmente', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01' },
-                { value: '15', label: 'países con instalaciones', icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z' }
-              ].map((stat, i) => (
-                <div 
-                  key={i}
-                  className="group relative p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-200/50 hover:border-[#D94B45]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="absolute -top-3 -right-3 w-16 h-16 rounded-full bg-gradient-to-br from-[#D94B45]/10 to-[#D94B45]/5 blur-xl group-hover:scale-110 transition-transform" />
-                  <svg className="w-8 h-8 text-[#D94B45] mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={stat.icon} />
-                  </svg>
-                  <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-600 leading-snug">{stat.label}</div>
-                </div>
-              ))}
+            {/* Columna derecha: Imagen y Stats */}
+            <div className="relative space-y-8">
+              {/* Imagen */}
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl lg:max-h-[550px]">
+                <img 
+                  src={kernHomeImg} 
+                  alt="Profesionales de salud usando tecnología Kern-it" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Stats Marquee - Carrusel Infinito en Card */}
+            <div className="relative rounded-3xl bg-white border-2 border-[#D94B45]/30 shadow-lg overflow-hidden py-4 px-6 sm:py-5 sm:px-8">
+              {/* Estilo de animación en línea para el marquee */}
+              <style>{`
+                @keyframes scroll-left {
+                  0% {
+                    transform: translateX(0);
+                  }
+                  100% {
+                    transform: translateX(-50%);
+                  }
+                }
+                .animate-scroll {
+                  animation: scroll-left 25s linear infinite;
+                }
+                .animate-scroll:hover {
+                  animation-play-state: paused;
+                }
+              `}</style>
+              
+              {/* Contenedor de marquee duplicado para efecto infinito */}
+              <div className="flex animate-scroll min-w-max">
+                {/* Primera iteración de stats */}
+                {[
+                  { value: '+23M', label: 'Pacientes anuales en LATAM', icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z' },
+                  { value: '+840', label: 'Puntos de extracción', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
+                  { value: '+350M', label: 'Estudios procesados anualmente', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01' },
+                  { value: '15', label: 'Países con instalaciones', icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z' }
+                ].map((stat, i) => (
+                  <div 
+                    key={`first-${i}`}
+                    className="flex-shrink-0 mr-8 pr-8 border-r-2 border-[#D94B45]/30"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 w-16 h-16 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#D94B45]/10 to-[#D94B45]/5 flex items-center justify-center">
+                        <svg className="w-8 h-8 sm:w-7 sm:h-7 text-[#D94B45]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={stat.icon} />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-3xl sm:text-2xl font-bold text-gray-900 leading-tight">{stat.value}</div>
+                        <div className="text-sm sm:text-xs text-gray-600 whitespace-nowrap mt-1">{stat.label}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                
+                {/* Segunda iteración (duplicado para efecto infinito) */}
+                {[
+                  { value: '+23M', label: 'Pacientes anuales en LATAM', icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z' },
+                  { value: '+840', label: 'Puntos de extracción', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
+                  { value: '+350M', label: 'Estudios procesados anualmente', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01' },
+                  { value: '15', label: 'Países con instalaciones', icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z' }
+                ].map((stat, i) => (
+                  <div 
+                    key={`second-${i}`}
+                    className="flex-shrink-0 mr-8 pr-8 border-r-2 border-[#D94B45]/30"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 w-16 h-16 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#D94B45]/10 to-[#D94B45]/5 flex items-center justify-center">
+                        <svg className="w-8 h-8 sm:w-7 sm:h-7 text-[#D94B45]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={stat.icon} />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-3xl sm:text-2xl font-bold text-gray-900 leading-tight">{stat.value}</div>
+                        <div className="text-sm sm:text-xs text-gray-600 whitespace-nowrap mt-1">{stat.label}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Gradientes de fade en los extremos */}
+              <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+              <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+            </div>
             </div>
           </div>
-
         </div>
       </section>
 

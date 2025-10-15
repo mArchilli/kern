@@ -62,7 +62,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-[#9BA6A1] hover:text-[#D94B45] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#D94B45]"
+              className="inline-flex items-center justify-center p-2 rounded-md text-[#D94B45] hover:text-[#c7413c] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#D94B45]"
             >
               <svg
                 className="h-6 w-6"
