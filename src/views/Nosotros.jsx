@@ -319,15 +319,15 @@ const Nosotros = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Contenido principal */}
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+              <h1 className="text-4xl text-center sm:text-left sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
                 ¿Por qué <span className="text-[#D94B45]">Kern IT</span>?
               </h1>
-
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-6">
+              
+              <span className="block w-fit mx-auto sm:mx-0 sm:inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-6">
                 Sobre nosotros
               </span>
               
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 text-center">
                 Somos partners. Kern-IT es el socio estratégico por excelencia de los laboratorios de análisis clínicos y centros de diagnóstico. Desde hace más de 20 años, brindamos soluciones tecnológicas diseñadas para la mejora de la experiencia de los pacientes.
               </p>
               
