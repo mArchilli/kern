@@ -74,7 +74,7 @@ const MobileStackCards = () => {
   }, [isPaused, nextCard])
 
   return (
-    <div className="relative h-[420px] flex items-center justify-center px-4 overflow-hidden">
+  <div className="relative h-[420px] flex items-center justify-center px-4 overflow-hidden" data-aos="fade-up">
       <div
         className="relative w-full max-w-sm mx-auto h-full touch-pan-x overscroll-x-contain overflow-hidden rounded-[28px] isolate bg-white"
         onTouchStart={handleTouchStart}
@@ -273,7 +273,7 @@ const ServicesInteractive = () => {
           ))}
         </div>
 
-        <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-8 shadow-xl">
+  <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-8 shadow-xl" data-aos="fade-up" data-aos-delay="100">
           <div className="flex items-start gap-4 mb-6">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] text-white flex items-center justify-center flex-shrink-0 shadow-lg">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -306,7 +306,7 @@ const ServicesInteractive = () => {
 
       {/* Desktop */}
       <div className="hidden md:grid md:grid-cols-[1fr,400px] gap-8 items-start">
-        <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-10 shadow-xl min-h-[480px] flex flex-col">
+  <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-10 shadow-xl min-h-[480px] flex flex-col" data-aos="fade-right">
           <div className="flex items-start gap-5 mb-8">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] text-white flex items-center justify-center flex-shrink-0 shadow-lg">
               <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -360,6 +360,8 @@ const ServicesInteractive = () => {
                   ? 'border-[#D94B45] bg-[#D94B45]/5 shadow-lg scale-105'
                   : 'border-gray-200 bg-white hover:border-[#D94B45]/30 hover:shadow-md'
               }`}
+              data-aos="fade-left"
+              data-aos-delay={i * 80}
             >
               <div className="flex items-center gap-4">
                 <div

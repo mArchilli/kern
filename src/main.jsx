@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import MainLayout from './components/MainLayout.jsx'
+import AOSInit from './components/AOSInit.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import Home from './views/Home.jsx'
 import Nosotros from './views/Nosotros.jsx'
@@ -14,6 +15,7 @@ import NotFound from './views/NotFound.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+      <AOSInit />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>

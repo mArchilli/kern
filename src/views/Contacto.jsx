@@ -77,14 +77,14 @@ const Contacto = () => {
         <div className="pointer-events-none absolute -bottom-40 right-0 w-[20rem] h-[20rem] rounded-full bg-[#D94B45]/10 blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-gray-900">Conectemos para potenciar tu laboratorio</h1>
-            <p className="mt-4 text-lg text-gray-600">Contanos en qué estás y diseñamos juntos un plan para mejorar la experiencia del paciente.</p>
+          <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
+            <h1 className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-gray-900" data-aos="fade-up" data-aos-delay="50">Conectemos para potenciar tu laboratorio</h1>
+            <p className="mt-4 text-lg text-gray-600" data-aos="fade-up" data-aos-delay="120">Contanos en qué estás y diseñamos juntos un plan para mejorar la experiencia del paciente.</p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Mapa de Google reemplazando las cards */}
-            <div className="lg:col-span-5 order-2 lg:order-1">
+            <div className="lg:col-span-5 order-2 lg:order-1" data-aos="fade-right">
               <div className="relative rounded-2xl bg-gradient-to-br from-[#D94B45]/20 via-white to-[#9BA6A1]/20 p-[1px]">
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-[#E7EBEA] shadow-md">
                   {/* blobs decorativos internos */}
@@ -130,7 +130,7 @@ const Contacto = () => {
             </div>
 
             {/* Información de contacto (reemplaza al formulario) */}
-            <div className="lg:col-span-7 order-1 lg:order-2">
+            <div className="lg:col-span-7 order-1 lg:order-2" data-aos="fade-left">
               <div className="relative rounded-2xl bg-gradient-to-br from-[#D94B45]/20 via-white to-[#9BA6A1]/20 p-[1px]">
                 <div className="relative rounded-2xl bg-white border border-[#E7EBEA] shadow-md p-8 sm:p-10 overflow-hidden">
                   {/* blobs decorativos internos */}

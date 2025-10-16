@@ -319,26 +319,26 @@ const Nosotros = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Contenido principal */}
             <div>
-              <h1 className="text-4xl text-center sm:text-left sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+              <h1 className="text-4xl text-center sm:text-left sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight" data-aos="fade-up">
                 ¿Por qué <span className="text-[#D94B45]">Kern IT</span>?
               </h1>
               
-              <span className="block w-fit mx-auto sm:mx-0 sm:inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-6">
+              <span className="block w-fit mx-auto sm:mx-0 sm:inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-6" data-aos="zoom-in" data-aos-delay="100">
                 Sobre nosotros
               </span>
               
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 text-center">
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 text-center" data-aos="fade-up" data-aos-delay="150">
                 Somos partners. Kern-IT es el socio estratégico por excelencia de los laboratorios de análisis clínicos y centros de diagnóstico. Desde hace más de 20 años, brindamos soluciones tecnológicas diseñadas para la mejora de la experiencia de los pacientes.
               </p>
               
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
                 <PillButton to="/contacto" variant="primary">Contactarnos</PillButton>
                 <PillButton to="/productos" variant="secondary">Ver productos</PillButton>
               </div>
             </div>
 
             {/* Panel destacado con stats */}
-            <div className="relative">
+            <div className="relative" data-aos="fade-left">
               {/* Borde con gradiente */}
               <div className="relative rounded-3xl p-[1px] bg-gradient-to-br from-[#D94B45]/40 via-[#D94B45]/10 to-transparent shadow-xl">
                 {/* Contenido */}
@@ -429,7 +429,7 @@ const Nosotros = () => {
       </section>
 
       {/* Equipo de expertos con diseño moderno */}
-  <section className="relative overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F7F9F8]">
+  <section className="relative overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F7F9F8]" data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -491,7 +491,7 @@ const Nosotros = () => {
       </section>
 
       {/* Cobertura de necesidades - Diseño moderno */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+  <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white" data-aos="fade-up">
         {/* Gradient decorativo izquierda */}
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-gray-900/15 via-gray-800/10 to-transparent rounded-full blur-3xl -translate-x-1/2" />
         
@@ -589,7 +589,7 @@ const Nosotros = () => {
       </section>
 
       {/* Visión y Misión - Diseño moderno con cards grandes */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F7F9F8] to-white">
+  <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F7F9F8] to-white" data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
           {/* Header centrado */}
           <div className="text-center mb-16">
@@ -675,7 +675,7 @@ const Nosotros = () => {
       </section>
 
       {/* Política de Calidad - Diseño destacado */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+  <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white" data-aos="fade-up">
         {/* Gradient decorativo */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D94B45]/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
         

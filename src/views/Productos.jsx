@@ -192,8 +192,8 @@ const Productos = () => {
         <div className="pointer-events-none absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-[#9BA6A1]/10 blur-3xl" />
         <div className="pointer-events-none absolute -top-40 right-1/3 w-[24rem] h-[24rem] rounded-full bg-[#D94B45]/5 blur-3xl" />
 
-        <div className="relative max-w-7xl mx-auto text-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-2">
+  <div className="relative max-w-7xl mx-auto text-center" data-aos="fade-up">
+          <div className="inline-flex flex-wrap items-center justify-center gap-2" data-aos="zoom-in">
             {['Cloud-first', 'Interoperable (HL7/FHIR)', 'Escalable y seguro'].map((chip) => (
               <span key={chip} className="px-3 py-1 rounded-full text-xs font-medium bg-[#F2F5F4] text-[#4B5552] border border-[#E7EBEA]">
                 {chip}
@@ -201,15 +201,15 @@ const Productos = () => {
             ))}
           </div>
 
-          <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+          <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900" data-aos="fade-up" data-aos-delay="100">
             Impulsá tu laboratorio con nuestra suite
           </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="150">
             Soluciones diseñadas para optimizar procesos, elevar la calidad de atención y tomar mejores decisiones con datos reales.
           </p>
 
           {/* Métricas de confianza */}
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             {[
               { n: '+23M', d: 'pacientes anuales' },
               { n: '+840', d: 'puntos de extracción' },
@@ -231,7 +231,7 @@ const Productos = () => {
 
       {/* Grid productos con animaciones y estilo diferencial */}
       <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-[#F7F9F8]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10" data-aos="fade-up">
           {productos.map((p, i) => (
             <ProductCard key={p.id} p={p} index={i} />
           ))}
@@ -240,7 +240,7 @@ const Productos = () => {
 
       {/* CTA Final */}
       <section className="py-14 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto rounded-2xl border border-[#E7EBEA] p-8 sm:p-10 text-center">
+  <div className="max-w-7xl mx-auto rounded-2xl border border-[#E7EBEA] p-8 sm:p-10 text-center" data-aos="fade-up">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">¿Querés conocer más en detalle?</h2>
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
             Descargá las fichas técnicas o escribinos y armamos una demo enfocada en tus procesos.
