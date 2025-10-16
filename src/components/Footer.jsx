@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Marca y propósito */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold tracking-tight text-[#D94B45]">Kern IT</span>
+              <span className="text-2xl font-bold tracking-tight text-white">Kern IT</span>
             </div>
             <p className="text-white/90 mb-4 max-w-xl">
               Enfocados junto a los laboratorios de análisis clínicos para mejorar la calidad de atención al paciente.
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Enlaces rápidos */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#D94B45]">Enlaces</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-white/90 hover:text-[#D94B45] transition-colors">
@@ -84,7 +84,7 @@ const Footer = () => {
 
           {/* Información de contacto */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#D94B45]">Ubicación</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Ubicación</h3>
             <ul className="space-y-3 text-white/90">
               <li className="flex items-start">
                 <svg className="h-9 w-9 mr-2 -mt-1.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
