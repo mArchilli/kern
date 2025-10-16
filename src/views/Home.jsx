@@ -36,7 +36,7 @@ const Home = () => {
 
               {/* Botones separados con forma redondeada */}
               <div className="mt-8 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                <PillButton to="/contacto" variant="primary" aria-label="Contactar con Kern-it">Contactarme</PillButton>
+                <PillButton to="/contacto" variant="primary" aria-label="Contactar con Kern-it">Contactanos</PillButton>
                 <PillButton to="/nosotros" variant="secondary" aria-label="Conocer más sobre Kern-it">Conocer más</PillButton>
               </div>
             </div>
