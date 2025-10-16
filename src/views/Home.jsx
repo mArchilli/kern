@@ -9,7 +9,7 @@ import kernHomeImg from '../assets/kern-home.jpg'
 
 const Home = () => {
   return (
-    <div className="bg-white text-gray-800">
+    <div className="bg-white text-gray-800 overflow-x-hidden">
       {/* Hero - Mobile First */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-start py-8 px-4 sm:py-10 sm:px-6 lg:px-8 lg:pt-16 bg-gradient-to-br from-white via-white to-[#F5F7F6]">
         {/* Gradiente decorativo rojo en esquina superior izquierda */}
@@ -232,7 +232,7 @@ const Home = () => {
                 }
               `}</style>
               
-              <div className="relative h-[420px] flex items-center justify-center px-4">
+              <div className="relative h-[420px] flex items-center justify-center px-4 overflow-hidden">
                 {/* Cards superpuestas con efecto stack */}
                 {(() => {
                   const cards = [
@@ -311,7 +311,7 @@ const Home = () => {
                     <>
                       {/* Stack de cards */}
                       <div 
-                        className="relative w-full max-w-sm mx-auto h-full"
+                        className="relative w-full max-w-sm mx-auto h-full touch-pan-x overscroll-x-contain"
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}

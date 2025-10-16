@@ -67,7 +67,7 @@ const Contacto = () => {
   }
 
   return (
-    <div className="bg-white text-gray-800">
+    <div className="bg-white text-gray-800 overflow-x-hidden">
       {/* Hero + Formulario (estilo vidrio) */}
       <section className="relative overflow-hidden py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
         {/* Deco suaves para dar fondo al vidrio */}
