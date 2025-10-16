@@ -175,41 +175,7 @@ const MobileStackCards = () => {
         })}
       </div>
 
-      {/* Indicadores y controles */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-        <div className="flex gap-2">
-          {cards.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={`h-2 rounded-full transition-all ${
-                i === currentIndex ? 'w-8 bg-[#D94B45]' : 'w-2 bg-gray-300'
-              }`}
-              aria-label={`Ir a card ${i + 1}`}
-            />
-          ))}
-        </div>
-        <div className="flex gap-3">
-          <button
-            onClick={prevCard}
-            className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-[#D94B45] hover:bg-[#D94B45] hover:text-white transition-all transform hover:scale-110"
-            aria-label="Anterior"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={nextCard}
-            className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-[#D94B45] hover:bg-[#D94B45] hover:text-white transition-all transform hover:scale-110"
-            aria-label="Siguiente"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-      </div>
+      
     </div>
   )
 }
@@ -433,6 +399,7 @@ const ServicesInteractive = () => {
 const Home = () => {
   return (
     <div className="bg-white text-gray-800 overflow-x-hidden">
+      {/*Hero Section */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-start py-8 px-4 sm:py-10 sm:px-6 lg:px-8 lg:pt-16 bg-gradient-to-br from-white via-white to-[#F5F7F6]">
         {/* Gradiente decorativo rojo en esquina superior izquierda */}
         <div className="pointer-events-none absolute top-0 left-0 w-[35rem] h-[35rem] rounded-full bg-[#D94B45]/15 blur-3xl -translate-x-1/3 -translate-y-1/3" />
@@ -595,7 +562,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Propuesta de Valor - Mobile First */}
+      {/* Propuesta de Valor  */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
         {/* Animaciones y utilidades */}
         <style>{`
@@ -707,7 +674,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Diferenciadores - Mobile First */}
+      {/* Diferenciadores */}
       <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F7F9F8] to-white">
         <div className="pointer-events-none absolute top-0 left-0 w-[40rem] h-[40rem] rounded-full bg-gradient-to-br from-gray-900/15 via-gray-800/10 to-transparent blur-3xl -translate-x-1/3 -translate-y-1/3" />
         
@@ -920,7 +887,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Principal - Mobile First con diseño moderno */}
+      {/* CTA Principal  */}
       <section className="relative overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px'}} />
@@ -1009,7 +976,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Partner Section - Mobile First con diseño renovado */}
+      {/* Partner Section */}
       <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F7F9F8]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
