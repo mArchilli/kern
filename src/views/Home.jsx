@@ -400,7 +400,7 @@ const ServicesInteractive = () => {
 
 const Home = () => {
   return (
-    <div className="bg-white text-gray-800 overflow-x-hidden">
+    <div className="bg-white text-gray-800 ">
       {/*Hero Section */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-start py-8 px-4 sm:py-10 sm:px-6 lg:px-8 lg:pt-16 bg-gradient-to-br from-white via-white to-[#F5F7F6]">
         {/* Gradiente decorativo rojo en esquina superior izquierda */}
@@ -411,22 +411,22 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-start mb-16">
             {/* Contenido principal */}
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-gray-900 mb-6">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-gray-900 mb-6" data-aos="fade-up">
                 Mejorar la experiencia del paciente es nuestro objetivo
               </h1>
 
               {/* Badge */}
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#D94B45]/10 border border-[#D94B45]/20 mb-6">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#D94B45]/10 border border-[#D94B45]/20 mb-6" data-aos="zoom-in" data-aos-delay="80">
                 <span className="w-2 h-2 rounded-full bg-[#D94B45] mr-2 animate-pulse" />
                 <span className="text-sm font-medium text-[#D94B45]">+20 años de experiencia en salud</span>
               </div>
               
-              <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
+              <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed" data-aos="fade-up" data-aos-delay="140">
                 Kern-it es el nexo para mejorar la calidad de atención y enriquecer la experiencia del paciente. A través de tecnología innovadora, acompañamos a nuestros clientes para posicionar al paciente en primer plano.
               </p>
 
               {/* Botones separados con forma redondeada */}
-              <div className="mt-8 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
+              <div className="mt-8 flex flex-wrap items-center gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="200">
                 <PillButton to="/contacto" variant="primary" aria-label="Contactar con Kern-it">Contactanos</PillButton>
                 <PillButton to="/nosotros" variant="secondary" aria-label="Conocer más sobre Kern-it">Conocer más</PillButton>
               </div>
@@ -435,7 +435,7 @@ const Home = () => {
             {/* Columna derecha: Imagen y Stats */}
             <div className="relative space-y-8">
               {/* Imagen */}
-              <div className="hidden md:block relative overflow-hidden rounded-3xl shadow-2xl lg:max-h-[550px]">
+              <div className="hidden md:block relative overflow-hidden rounded-3xl shadow-2xl lg:max-h-[550px]" data-aos="fade-left">
                 <img 
                   src={kernHomeImg} 
                   alt="Profesionales de salud usando tecnología Kern-it" 
@@ -444,7 +444,7 @@ const Home = () => {
               </div>
 
               {/* Stats Marquee - Carrusel Infinito en Card */}
-            <div className="relative rounded-3xl bg-white border-2 border-[#D94B45]/30 shadow-lg overflow-hidden py-4 px-6 sm:py-5 sm:px-8">
+            <div className="relative rounded-3xl bg-white border-2 border-[#D94B45]/30 shadow-lg overflow-hidden py-4 px-6 sm:py-5 sm:px-8" data-aos="fade-up" data-aos-delay="150">
               {/* Estilo de animación en línea para el marquee */}
               <style>{`
                 @keyframes scroll-left {
@@ -583,14 +583,14 @@ const Home = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Header de sección */}
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="50">
               Tecnología centrada en el paciente
             </h2>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-4" data-aos="zoom-in" data-aos-delay="100">
               Soluciones integrales
             </span>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
               Transformamos la experiencia de atención médica con soluciones diseñadas para cada etapa del proceso
             </p>
           </div>
@@ -639,6 +639,8 @@ const Home = () => {
                 <div 
                   key={i}
                   className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:border-[#D94B45]/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                  data-aos="fade-up"
+                  data-aos-delay={i * 100}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                   
@@ -681,14 +683,14 @@ const Home = () => {
         <div className="pointer-events-none absolute top-0 left-0 w-[40rem] h-[40rem] rounded-full bg-gradient-to-br from-gray-900/15 via-gray-800/10 to-transparent blur-3xl -translate-x-1/3 -translate-y-1/3" />
         
         <div className="relative max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="50">
               Qué nos hace diferentes
             </h2>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-4" data-aos="zoom-in" data-aos-delay="100">
               Por qué elegirnos
             </span>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="150">
               Acompañamos a nuestros clientes desde hace más de 20 años y somos sus aliados estratégicos para brindar la mejor experiencia del paciente y alcanzar los máximos niveles de satisfacción
             </p>
           </div>
@@ -725,6 +727,8 @@ const Home = () => {
                 key={i}
                 className="feature-card group relative"
                 style={{ animationDelay: `${i * 100}ms` }}
+                data-aos="zoom-in-up"
+                data-aos-delay={i * 120}
               >
                 <div className="card-container relative h-full rounded-[28px] bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-3"
                   style={{ boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03), inset 0 0 0 1px rgba(0, 0, 0, 0.03)' }}
@@ -890,7 +894,7 @@ const Home = () => {
       </section>
 
       {/* CTA Principal  */}
-      <section className="relative overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+  <section className="relative overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px'}} />
         </div>
@@ -900,7 +904,7 @@ const Home = () => {
 
         <div className="relative max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="text-center lg:text-left text-white">
+            <div className="text-center lg:text-left text-white" data-aos="fade-right">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                 Llevá la experiencia del paciente al <span className="text-[#D94B45]">siguiente nivel</span>
               </h2>
@@ -943,7 +947,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative" data-aos="fade-left">
               <div className="rounded-3xl bg-white/95 backdrop-blur-xl p-8 sm:p-10 shadow-2xl border border-white/20">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] text-white flex items-center justify-center mb-6 shadow-lg">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -981,17 +985,17 @@ const Home = () => {
       {/* Partner Section */}
       <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F7F9F8]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">Somos tu partner en salud</h3>
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-6">Tu aliado estratégico</span>
             <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">Acompañamos a nuestros clientes desde hace más de 20 años y somos sus aliados estratégicos para brindar la mejor experiencia del paciente y alcanzar los máximos niveles de satisfacción</p>
           </div>
 
-          <div>
+          <div data-aos="fade-up" data-aos-delay="100">
             <ServicesInteractive />
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-12" data-aos="fade-up" data-aos-delay="150">
             <Link to="/productos" className="px-8 py-4 rounded-full font-semibold text-white bg-[#D94B45] hover:bg-[#c7413c] transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap" aria-label="Ver productos">Ver productos</Link>
             <Link to="/nosotros" className="px-8 py-4 rounded-full font-semibold text-gray-700 bg-white border-2 border-gray-200 hover:border-[#D94B45] hover:text-[#D94B45] transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap" aria-label="Conocer más">Conocer más</Link>
           </div>
