@@ -311,7 +311,7 @@ const Home = () => {
                     <>
                       {/* Stack de cards */}
                       <div 
-                        className="relative w-full max-w-sm mx-auto h-full touch-pan-x overscroll-x-contain"
+                        className="relative w-full max-w-sm mx-auto h-full touch-pan-x overscroll-x-contain overflow-hidden rounded-[28px] isolate bg-white"
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}
@@ -327,15 +327,16 @@ const Home = () => {
                           
                           if (isCurrent) {
                             zIndex = 30;
-                            transform = 'translateX(0) scale(1) rotate(0deg)';
+                            // Leve scale para permitir que se asomen las tarjetas laterales sin halo oscuro
+                            transform = 'translateX(0) scale(0.98) rotate(0deg)';
                             opacity = 1;
                           } else if (isNext) {
                             zIndex = 20;
-                            transform = 'translateX(12%) scale(0.92) rotate(2deg)';
+                            transform = 'translateX(12%) scale(0.92) rotate(0deg)';
                             opacity = 0.6;
                           } else if (isPrev) {
                             zIndex = 10;
-                            transform = 'translateX(-12%) scale(0.92) rotate(-2deg)';
+                            transform = 'translateX(-12%) scale(0.92) rotate(0deg)';
                             opacity = 0.6;
                           }
                           
@@ -347,16 +348,20 @@ const Home = () => {
                                 zIndex,
                                 transform,
                                 opacity,
+                                willChange: 'transform',
+                                backfaceVisibility: 'hidden',
+                                WebkitBackfaceVisibility: 'hidden',
+                                transformStyle: 'preserve-3d',
                               }}
                             >
-                              <div className="h-full overflow-hidden rounded-3xl bg-white shadow-2xl border-2 border-gray-100">
+                              <div className={`relative h-full overflow-hidden rounded-3xl bg-white transition-shadow duration-300 ${isCurrent ? 'shadow-2xl border-2 border-gray-100' : 'border-2 border-transparent shadow-none'}`}>
                                 {/* Borde superior de color */}
-                                <div className="h-1.5 w-full" style={{ background: card.color }} />
+                                <div className="h-1.5 w-full rounded-t-3xl" style={{ background: card.color }} />
                                 
                                 {/* Gradient background */}
-                                <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient}`} />
+                                <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} pointer-events-none rounded-3xl z-0`} />
                                 
-                                <div className="relative p-8 h-full flex flex-col">
+                                <div className="relative z-10 p-8 h-full flex flex-col">
                                   {/* Icono */}
                                   <div 
                                     className="w-16 h-16 rounded-2xl text-white flex items-center justify-center mb-6 shadow-xl transform hover:scale-110 transition-transform"
