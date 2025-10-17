@@ -555,12 +555,12 @@ const Nosotros = () => {
                 <h3 className="text-2xl font-bold text-gray-900">Lo que nos guía</h3>
               </div>
 
-              <div className="space-y-4 relative">
+              <div className="space-y-2 relative">
                 {[
-                  'El paciente en primer plano y la confidencialidad, transparencia y seguridad.',
-                  'Educación continua, trabajo en equipo y talento colectivo.',
-                  'Ética en los negocios, respeto personal y excelencia profesional.',
-                  'Innovación para mejorar la rentabilidad y resultados de nuestros clientes.'
+                  'Educación continua para el desarrollo de talentos y el trabajo en equipo, potenciando el talento colectivo.',
+                  'Compromiso y participación activa de todo el staff en la ética en los negocios, respeto personal y la excelencia profesional.',
+                  'Diversidad e inclusión es una parte consciente de todos los empleados de la compañía y de la forma que manejamos nuestro negocio.',
+                  'Enfoque en los procesos mediante el trabajo en equipo, con el fin de obtener altos estándares de calidad y productos tecnológicamente innovadores.'
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#F0F2F2] shadow-sm hover:shadow-md transition-shadow">
                     <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-white to-[#F8FAF9] text-[#D94B45] border border-[#E7EBEA] flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -617,7 +617,7 @@ const Nosotros = () => {
               </div>
               
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Ser líderes en la transformación digital de laboratorios y centros de diagnóstico, constituyéndonos en su principal socio de negocios, ofreciendo soluciones innovadoras con la mejor propuesta de valor.
+                Ser líderes en la transformación digital de laboratorios y centros de diagnóstico, constituyéndose en su principal socio de negocios, ofreciendo las soluciones más innovadoras y con la mejor propuesta de valor. Ser el principal proveedor estratégico de los laboratorios de análisis clínicos en Latam, aplicando las mejores y más avanzadas prácticas de gestión de la información en el sector de salud hasta finales de la década de 2020.
               </p>
               
               <div className="space-y-3 pt-6 border-t border-gray-100">
@@ -650,7 +650,8 @@ const Nosotros = () => {
               </div>
               
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Potenciar el impacto del laboratorio clínico con tecnologías de última generación, conectando a los principales actores del sector sanitario y cubriendo los circuitos administrativos, preanalíticos, analíticos, post-analíticos y de gerenciamiento.
+                Potenciar el impacto del laboratorio clínico a través de tecnologías de la información de última generación, conectando de manera amplia a todos los principales actores del sector sanitario implicados en la prevención y recuperación de la salud de los pacientes de nuestros clientes.Nuestras soluciones cubren las necesidades de los laboratorios modernos en los circuitos: administrativos, preanalíticos, analíticos, post-analíticos y de gerenciamiento. Somos líderes en interoperabilidad y ofrecemos productos sólidos, flexibles, escalables, y que funcionan en todas las plataformas.
+                LIS, nuestro sistema de gestión para laboratorios de análisis clínicos, es la primera solución de estas características en la nube.
               </p>
               
               <div className="space-y-3 pt-6 border-t border-gray-100">
@@ -691,7 +692,8 @@ const Nosotros = () => {
             </h2>
             
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Nos exigimos creatividad e innovación con liderazgo en diseño, desarrollo e implementación de sistemas de gestión en salud, con un nivel de calidad de excelencia.
+              Nos exigimos Creatividad, Innovación, liderazgo en Diseño, Desarrollo e Implementación de Sistemas de Gestión en la industria de la Salud con un nivel de Calidad de Excelencia.
+              La política de calidad de Kern IT tiene como base estos principios
             </p>
           </div>
 
@@ -699,13 +701,13 @@ const Nosotros = () => {
           <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-10 lg:p-12 shadow-2xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                'Cumplir las expectativas de calidad de nuestros clientes',
-                'Ofrecer productos y servicios conforme a especificaciones y requisitos',
-                'Promover la gestión de la calidad en todos los niveles y procesos',
-                'Asegurar la difusión y comprensión del sistema de gestión de calidad',
-                'Impulsar un management comprometido con la calidad',
-                'Priorizar la mejora continua para aumentar eficiencia y eficacia',
-                'Establecer confianza, colaboración y compromiso con nuestros clientes',
+                'Cumplir las expectativas de Calidad de nuestros Clientes.',
+                'Ofrecer productos y servicios conformes a las especificaciones y requisitos establecidos.',
+                'Promover la Gestión de la Calidad en todos los niveles y en todos los procesos de la Empresa.',
+                'Asegurar la difusión y comprensión de los contenidos del Sistema de Gestión de la Calidad, incluida esta Política de Calidad, a fin de que todos puedan cumplir con los compromisos formulados.',
+                'Impulsar un management y equipo de trabajo comprometido con la Calidad, con el fin de asegurar el futuro de la Empresa y su desarrollo.',
+                'Priorizar la Mejora Continua en la Gestión de la Calidad, para aumentar la eficiencia y eficacia de todas nuestras operaciones.',
+                'Establecer un alto grado de confianza, colaboración y compromiso con todos nuestros clientes en el ámbito de la Calidad.',
                 'Asegurar el futuro y el desarrollo de la empresa a través de la calidad',
               ].map((item, i) => (
                 <div 

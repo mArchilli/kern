@@ -915,10 +915,10 @@ const Home = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                 {[
-                  { icon: 'M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', text: 'Respuesta en menos de 24 horas' },
-                  { icon: 'M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0 a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z', text: 'Acompañamiento por especialistas' },
-                  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', text: 'Implementación sin fricción' },
-                  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', text: 'Sin compromiso inicial' }
+                  { icon: 'M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', text: '20 años de experiencia' },
+                  { icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', text: 'Interoperabilidad entre sistemas' },
+                  { icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z', text: 'LIS Cloud based' },
+                  { icon: 'M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0 a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z', text: 'Acompañamiento por especialistas' }
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3 group">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#D94B45]/20 border border-[#D94B45]/30 flex items-center justify-center group-hover:bg-[#D94B45] group-hover:scale-110 transition-all duration-300">
@@ -959,7 +959,7 @@ const Home = () => {
                 <p className="text-gray-600 leading-relaxed mb-8">Compartinos tus desafíos actuales y te ayudamos a diseñar una experiencia centrada en el paciente</p>
 
                 <div className="space-y-4 mb-8">
-                  {['Análisis personalizado de necesidades', 'Plan de acción en 3 pasos', 'Acompañamiento de especialistas'].map((item, i) => (
+                  {['Análisis personalizado de necesidades', 'Flexibilidad y adaptación', 'Soporte continuo'].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#D94B45]/10 flex items-center justify-center">
                         <svg className="w-4 h-4 text-[#D94B45]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -986,8 +986,8 @@ const Home = () => {
       <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F7F9F8]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">Somos tu partner en salud</h3>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-6">Tu aliado estratégico</span>
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">Somos tu aliado estratégico</h3>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-6">Acompañamiento en cada instancia</span>
             <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">Acompañamos a nuestros clientes desde hace más de 20 años y somos sus aliados estratégicos para brindar la mejor experiencia del paciente y alcanzar los máximos niveles de satisfacción</p>
           </div>
 
