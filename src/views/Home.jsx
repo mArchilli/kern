@@ -202,9 +202,9 @@ const ServicesInteractive = () => {
       shortDesc: 'Equipo experto y flexible',
       fullDesc: 'Equipo experto, flexible y atento a tu operación diaria',
       features: [
-        'Mesa de ayuda 24/7 disponible',
+        'Mesa de ayuda disponible',
         'Actualizaciones y mejoras continuas',
-        'Monitoreo proactivo del sistema',
+        'Monitoreo proactivo',
       ],
     },
     {
@@ -215,7 +215,7 @@ const ServicesInteractive = () => {
       fullDesc:
         'Iteramos con datos reales para optimizar la experiencia del paciente',
       features: [
-        'Análisis de métricas y KPIs clave',
+        'Análisis claves',
         'Reportes de satisfacción del paciente',
         'Recomendaciones basadas en datos',
       ],
@@ -412,7 +412,7 @@ const Home = () => {
             {/* Contenido principal */}
             <div className="text-center lg:text-left">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-gray-900 mb-6" data-aos="fade-up">
-                Mejorar la experiencia del paciente es nuestro objetivo
+                Mejorar la experiencia del paciente es nuestro principal objetivo.
               </h1>
 
               {/* Badge */}
@@ -422,7 +422,7 @@ const Home = () => {
               </div>
               
               <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed" data-aos="fade-up" data-aos-delay="140">
-                Kern-it es el nexo para mejorar la calidad de atención y enriquecer la experiencia del paciente. A través de tecnología innovadora, acompañamos a nuestros clientes para posicionar al paciente en primer plano.
+                Somos tu partner para lograrlo. Kern-it es el nexo para mejorar la calidad de atención y enriquecer la experiencia del paciente. A través de tecnología innovadora, acompañamos a nuestros clientes para posicionar al paciente en primer plano.
               </p>
 
               {/* Botones separados con forma redondeada */}
@@ -585,13 +585,13 @@ const Home = () => {
           {/* Header de sección */}
           <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="50">
-              Tecnología centrada en el paciente
+              Una solucion focalizada en mejorar la calidad de atencion al paciente.
             </h2>
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-4" data-aos="zoom-in" data-aos-delay="100">
               Soluciones integrales
             </span>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
-              Transformamos la experiencia de atención médica con soluciones diseñadas para cada etapa del proceso
+              Nuestra experiencia de mas de 20 años en el sector de la salud contribuyen para que nuestro servicio y soluciones se adapten facilmente a las necesidades de nuestros clientes y a la velocidad que requiere el mercado.
             </p>
           </div>
 
@@ -707,19 +707,19 @@ const Home = () => {
               {
                 icon: 'M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
                 title: 'Experiencia en el rubro',
-                description: 'Desde hace más de 20 años, acompañamos a nuestros clientes para mejorar la experiencia del paciente',
+                description: 'Desde hace mas de 20 años acompañamos a nuestros clientes para mejorar la experiencia del paciente',
                 number: '02'
               },
               {
                 icon: 'M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
                 title: 'Resultados precisos',
-                description: 'Anualmente, procesamos más de 350 millones de estudios con los más altos estándares',
+                description: 'Anualmente, procesamos mas de 350 millones de estudios.',
                 number: '03'
               },
               {
                 icon: 'M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z',
                 title: 'Personal calificado',
-                description: 'Profesionales que se destacan por su flexibilidad y adaptación a una industria en evolución',
+                description: 'Nuestros profesionales se destacan por su profesionalismo, flexibilidad y adaptacion a una industria en constante evolución.',
                 number: '04'
               }
             ].map((item, i) => (
