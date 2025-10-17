@@ -138,7 +138,7 @@ const Contacto = () => {
                   <div className="pointer-events-none absolute -bottom-24 -left-20 w-64 h-64 rounded-full bg-[#9BA6A1]/10 blur-3xl" />
 
                   <h2 className="text-2xl font-semibold text-gray-900">Contacto directo</h2>
-                  <p className="mt-2 text-gray-700">Elegí la vía que te quede más cómoda. Te respondemos dentro de las 24 hs hábiles.</p>
+                  <p className="mt-2 text-gray-700">Elegí la vía que te quede más cómoda. Te respondemos a la brevedad.</p>
 
                   <div className="mt-6 space-y-5 relative z-10">
                     <div className="relative rounded-xl border border-[#E7EBEA] p-5 shadow-sm bg-gradient-to-br from-[#D94B45]/5 to-white overflow-hidden">

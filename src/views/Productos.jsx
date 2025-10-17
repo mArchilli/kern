@@ -119,67 +119,47 @@ const Productos = () => {
       id: 'kern-lis-plus',
       nombre: 'KERN LIS+',
       resumen:
-        'Plataforma LIS cloud-first que optimiza el flujo preanalítico y la trazabilidad completa de muestras.',
-      tags: ['Preanalítico', 'Gestión de pedidos', 'Extracciones', 'Muestras'],
+        'Abarca todos los procesos previos al inicio de los procesos analíticos de procesamiento de muestra en la planta. Los grupos de procesos que abarca este módulo son: Gestión de Pedidos/ Gestión de Extracciones y Gestión de Muestras.',
+      tags: [],
       imagen: imgLis,
       pdf: pdfLis,
       badge: 'Más elegido',
-      features: [
-        'Check-in digital y autogestión del paciente',
-        'Trazabilidad end-to-end de muestras',
-        'Gestión de turnos y extracciones',
-        'Dashboards operativos y auditoría',
-      ],
-      ideal: ['Laboratorios multi-sede', 'Operaciones con alto volumen'],
+      features: [],
+      ideal: [],
     },
     {
       id: 'kern-bi',
       nombre: 'KERN BI',
       resumen:
-        'Inteligencia de negocios para decisiones ágiles: KPIs, tendencias y tableros gerenciales en tiempo real.',
-      tags: ['Business Intelligence', 'Dashboards', 'KPIs'],
+        'Módulo de Inteligencia de Negocios para laboratorios. Permite generar dashboards gerenciales con información relevante abreviada.',
+      tags: [],
       imagen: imgBi,
       pdf: pdfBi,
       badge: 'Novedad',
-      features: [
-        'KPIs operativos y financieros',
-        'Conectores a múltiples fuentes',
-        'Alertas y objetivos (OKRs)',
-        'Exportación y compartición segura',
-      ],
-      ideal: ['Dirección y gerencia', 'Analistas de datos'],
+      features: [],
+      ideal: [],
     },
     {
       id: 'kern-ix',
       nombre: 'KERN IX',
       resumen:
-        'Motor de interfaces e interoperabilidad sanitaria. HL7/FHIR para integrar equipos, HIS/EMR y terceros.',
-      tags: ['Interoperabilidad', 'Integraciones', 'HL7 / FHIR'],
+        'Motor de interface entre sistemas de información en salud. Es una plataforma común para gestionar la interoperabilidad entre los sistemas de Kern y otros sistemas que corran en el mismo laboratorio, pero permite ser usado stand alone entre otros sistemas no-kern.',
+      tags: [],
       imagen: imgIx,
       pdf: pdfIx,
-      features: [
-        'Conectividad HL7 / FHIR',
-        'Orquestación de flujos y mapping',
-        'Monitoreo y reintentos automáticos',
-        'Modo stand-alone o integrado',
-      ],
-      ideal: ['Integraciones complejas', 'IT hospitalaria'],
+      features: [],
+      ideal: [],
     },
     {
       id: 'kern-ap',
       nombre: 'KERN AP',
       resumen:
-        'Suite para Anatomía Patológica: logística de muestras, rotulado, trazabilidad y reportes especializados.',
-      tags: ['Anatomía Patológica', 'Trazabilidad', 'Informes'],
+        'Módulo de Gestión para Anatomía Patológica (AP). Permite gestionar la logística de muestras del laboratorio de AP, inclusive rotulando los cassettes y cristales. Alto nivel de trazabilidad en todos los puntos del proceso. Permite elaborar informes en intervenciones quirúrgicas que luego complementan el informe final.',
+      tags: [],
       imagen: imgAp,
       pdf: pdfAp,
-      features: [
-        'Rotulado de cassettes y cristales',
-        'Flujos configurables por protocolo',
-        'Trazabilidad y control de calidad',
-        'Informes con plantillas avanzadas',
-      ],
-      ideal: ['Servicios de AP', 'Centros de diagnóstico'],
+      features: [],
+      ideal: [],
     },
   ]
 
@@ -193,19 +173,12 @@ const Productos = () => {
         <div className="pointer-events-none absolute -top-40 right-1/3 w-[24rem] h-[24rem] rounded-full bg-[#D94B45]/5 blur-3xl" />
 
   <div className="relative max-w-7xl mx-auto text-center" data-aos="fade-up">
-          <div className="inline-flex flex-wrap items-center justify-center gap-2" data-aos="zoom-in">
-            {['Cloud-first', 'Interoperable (HL7/FHIR)', 'Escalable y seguro'].map((chip) => (
-              <span key={chip} className="px-3 py-1 rounded-full text-xs font-medium bg-[#F2F5F4] text-[#4B5552] border border-[#E7EBEA]">
-                {chip}
-              </span>
-            ))}
-          </div>
 
           <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900" data-aos="fade-up" data-aos-delay="100">
-            Enfocados junto a los laboratorios de análisis clínicos para mejorar la calidad de atención al paciente.
+            Nuestros productos.
           </h1>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="150">
-            Nuestra experiencia de más de 20 años en el sector de la salud contribuye para que nuestro servicio y soluciones se adapten fácilmente a las necesidades de nuestros clientes y a la velocidad que requiere el mercado.
+            Brindamos soluciones a nuestros clientes para el proceso completo preanalitico, módulo de extracción, autogestión por parte de los pacientes, y pre check-in para optimizar los tiempos de atención.
           </p>
 
           {/* Métricas de confianza */}
@@ -246,7 +219,7 @@ const Productos = () => {
             Contactanos y un especialista te asesorará para encontrar lo que mejor se adapta a tus necesidades.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <PillButton to="/contacto" variant="primary">Contactanos</PillButton>
+            <PillButton to="/contacto" variant="primary">Pedir una demo</PillButton>
           </div>
         </div>
       </section>
