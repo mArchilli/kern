@@ -1,6 +1,6 @@
 Kern IT - Deploy estatico con FileZilla
 
-Este paquete contiene el build de produccion (carpeta dist). A continuacion los pasos para subirlo a tu hosting usando FileZilla.
+Este paquete contiene el build de produccion (carpeta dist). A continuacion los pasos para subirlo a tu hosting usando FileZilla. (En caso de tener problemas con el deploy, escribinos, te ayudamos)
 
 1) Preparar los archivos
 - Si recibiste un ZIP (kern-prod-*.zip), descomprimilo localmente. Obtendras la carpeta dist con:
