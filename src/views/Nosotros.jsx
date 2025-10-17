@@ -430,7 +430,7 @@ const Nosotros = () => {
 
       {/* Equipo de expertos con diseño moderno */}
   <section className="relative overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F7F9F8]" data-aos="fade-up">
-        <div className="max-w-7xl mx-auto">
+  <div className="mx-auto max-w-[90rem]">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
@@ -598,14 +598,21 @@ const Nosotros = () => {
             </span>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Visión y misión
+              Visión, Misión y Valores
             </h2>
+
+            <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+              La innovación es clave para mejorar la rentabilidad para nuestros clientes. Innovamos para satisfacer necesidades y potencializar resultados. Nuestras soluciones están siempre a la vanguardia tecnológicas. Sentimos una gran pasión por el mercado de salud y actuamos con fuerte propósito de apoyar proactivamente, anticipamos las necesidades de nuestros clientes para sostener su evolución de forma continuada. Entregamos en tiempo y forma lo que nos comprometemos, somos un 1% mejores cada día.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mt-4">
+              Hablamos sin vueltas y sólo prometemos lo que sabemos que vamos a cumplir.
+            </p>
           </div>
 
           {/* Cards grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-8">
             {/* Visión */}
-            <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-8 xl:p-9 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] text-white flex items-center justify-center">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -616,11 +623,11 @@ const Nosotros = () => {
                 <h3 className="text-3xl font-bold text-gray-900">Visión</h3>
               </div>
               
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal mb-5">
                 Ser líderes en la transformación digital de laboratorios y centros de diagnóstico, constituyéndose en su principal socio de negocios, ofreciendo las soluciones más innovadoras y con la mejor propuesta de valor. Ser el principal proveedor estratégico de los laboratorios de análisis clínicos en Latam, aplicando las mejores y más avanzadas prácticas de gestión de la información en el sector de salud hasta finales de la década de 2020.
               </p>
               
-              <div className="space-y-3 pt-6 border-t border-gray-100">
+              <div className="space-y-2 pt-4 border-t border-gray-100">
                 {[
                   'Liderar la transformación digital del sector',
                   'Ser proveedor estratégico en LATAM',
@@ -639,7 +646,7 @@ const Nosotros = () => {
             </div>
 
             {/* Misión */}
-            <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-8 xl:p-9 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] text-white flex items-center justify-center">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -649,16 +656,50 @@ const Nosotros = () => {
                 <h3 className="text-3xl font-bold text-gray-900">Misión</h3>
               </div>
               
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal mb-5">
                 Potenciar el impacto del laboratorio clínico a través de tecnologías de la información de última generación, conectando de manera amplia a todos los principales actores del sector sanitario implicados en la prevención y recuperación de la salud de los pacientes de nuestros clientes.Nuestras soluciones cubren las necesidades de los laboratorios modernos en los circuitos: administrativos, preanalíticos, analíticos, post-analíticos y de gerenciamiento. Somos líderes en interoperabilidad y ofrecemos productos sólidos, flexibles, escalables, y que funcionan en todas las plataformas.
                 LIS, nuestro sistema de gestión para laboratorios de análisis clínicos, es la primera solución de estas características en la nube.
               </p>
               
-              <div className="space-y-3 pt-6 border-t border-gray-100">
+              <div className="space-y-2 pt-4 border-t border-gray-100">
                 {[
                   'Conectar todo el ecosistema de salud',
                   'Interoperabilidad estándar (HL7 / FHIR)',
                   'LIS cloud-first, seguro y escalable'
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-[#D94B45]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-[#D94B45]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-700 leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Valores */}
+            <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-8 xl:p-9 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] text-white flex items-center justify-center">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
+                  </svg>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900">Valores</h3>
+              </div>
+
+              <p className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal">
+                El paciente en primer plano. Somos aliados de nuestros clientes para alcanzar los más altos estándares de calidad de atención a los pacientes. Gestión de relaciones con nuestros clientes basada en la confidencialidad, transparencia y seguridad para el paciente.
+                Educación continua para el desarrollo de talentos y el trabajo en equipo, potenciando el talento colectivo.
+              </p>
+
+              <div className="space-y-2 pt-4 border-t border-gray-100">
+                {[
+                  'Compromiso y participación activa de todo el staff en la ética en los negocios, respeto personal y la excelencia profesional.',
+                  'Diversidad e inclusión es una parte consciente de todos los empleados de la compañía y de la forma que manejamos nuestro negocio.',
+                  'Enfoque en los procesos mediante el trabajo en equipo, con el fin de obtener altos estándares de calidad y productos tecnológicamente innovadores.'
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-[#D94B45]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
