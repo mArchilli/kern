@@ -633,15 +633,56 @@ const Nosotros = () => {
                 <h3 className="text-3xl font-bold text-gray-900">Valores</h3>
               </div>
 
-              <div className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal whitespace-pre-line">
-Nos exigimos Creatividad, Innovación, liderazgo en Diseño, Desarrollo e Implementación de Sistemas de Gestión en la industria de la Salud con un nivel de Calidad de Excelencia. La Política de la calidad de Kern IT tiene como base los siguientes principios:
-Cumplir las expectativas de Calidad de nuestros Clientes.
-Ofrecer productos y servicios conformes a las especificaciones y requisitos establecidos.
-Promover la Gestión de la Calidad en todos los niveles y en todos los procesos de la Empresa.
-Asegurar la difusión y comprensión de los contenidos del Sistema de Gestión de la Calidad, incluida esta Política de Calidad, a fin de que todos puedan cumplir con los compromisos formulados.
-Impulsar un management y equipo de trabajo comprometido con la Calidad, con el fin de asegurar el futuro de la Empresa y su desarrollo.
-Priorizar la Mejora Continua en la Gestión de la Calidad, para aumentar la eficiencia y eficacia de todas nuestras operaciones.
-Establecer un alto grado de confianza, colaboración y compromiso con todos nuestros clientes en el ámbito de la Calidad.
+              <div className="flex-1">
+                {/* Contenido en dos columnas con bullets cuadrados */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal">
+                  {/* Columna izquierda */}
+                  <div className="space-y-4">
+                    <p>
+                      El paciente en primer plano. Somos aliados de nuestros clientes para alcanzar los más altos estándares de calidad de atención a los pacientes. Gestión de relaciones con nuestros clientes basada en la confidencialidad, transparencia y seguridad para el paciente.
+                    </p>
+                    <p>
+                      Educación continua para el desarrollo de talentos y el trabajo en equipo, potenciando el talento colectivo
+                    </p>
+                    <p>
+                      Compromiso y participación activa de todo el staff en la ética en los negocios, respeto personal y la excelencia profesional.
+                    </p>
+                    <p>
+                      Diversidad e inclusión es una parte consciente de todos los empleados de la compañía y de la forma que manejamos nuestro negocio.
+                    </p>
+                    <p>
+                      Enfoque en los procesos mediante el trabajo en equipo, con el fin de obtener altos estándares de calidad y productos tecnológicamente innovadores.
+                    </p>
+                    <p className="font-semibold text-gray-800">
+                      La innovación es clave para mejorar la rentabilidad para nuestros clientes.
+                    </p>
+                  </div>
+
+                  {/* Columna derecha */}
+                  <div className="space-y-4">
+                    <p>
+                      Innovamos para satisfacer necesidades y potencializar resultados.
+                    </p>
+                    <p>
+                      Nuestras soluciones están siempre a la vanguardia tecnológicas.
+                    </p>
+                    <p>
+                      Sentimos una gran pasión por el mercado de salud y actuamos con fuerte propósito de apoyar.
+                    </p>
+                    <p>
+                      Proactivamente, anticipamos las necesidades de nuestros clientes para sostener su evolución de forma continuada.
+                    </p>
+                    <p>
+                      Entregamos en tiempo y forma lo que nos comprometemos.
+                    </p>
+                    <p>
+                      Somos un 1% mejores cada día.
+                    </p>
+                    <p>
+                      Hablamos sin vueltas y sólo prometemos lo que sabemos que vamos a cumplir.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
