@@ -429,15 +429,15 @@ const Nosotros = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
-              Expertos en salud digital
+              Nuestro equipo de expertos
             </h2>
 
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-5">
-              Nuestro equipo
+              Excelencia en salud y tecnología
             </span>
 
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Líderes con más de 20 años en tecnología para la salud, aportando su experiencia para mejorar la calidad de atención al paciente.
+              Nuestros lideres cuentan con una trayectoria de mas de 20 años en la industria de la tecnologia de la salud aportando su experiencia para mejorar junto a los laboratorios de analisis clinicos la calidad de atencion al paciente. 
             </p>
           </div>
 
@@ -511,7 +511,7 @@ const Nosotros = () => {
               </div>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                Somos líderes en interoperabilidad y ofrecemos productos sólidos, flexibles y escalables, que funcionan en todas las plataformas.
+                Somos lideres en interoperabilidad y ofrecemos productos solidos, flexibles, escalables y que funcionan en todas las plataformas.
               </p>
             </div>
 
