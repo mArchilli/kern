@@ -589,7 +589,10 @@ const Nosotros = () => {
               </div>
               
               <p className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal mb-5">
-                Ser líderes en la transformación digital de laboratorios y centros de diagnóstico, constituyéndose en su principal socio de negocios, ofreciendo las soluciones más innovadoras y con la mejor propuesta de valor. Ser el principal proveedor estratégico de los laboratorios de análisis clínicos en Latam, aplicando las mejores y más avanzadas prácticas de gestión de la información en el sector de salud hasta finales de la década de 2020.
+                Ser líderes en la transformación digital de laboratorios y centros de diagnóstico, constituyéndose en su principal socio de negocios, ofreciendo las soluciones más innovadoras y con la mejor propuesta de valor.
+                <br />
+                <br />
+                Ser el principal proveedor estratégico de los laboratorios de análisis clínicos en Latam, aplicando las mejores y más avanzadas prácticas de gestión de la información en el sector de salud hasta finales de la década de 2020.
               </p>
 
             </div>
@@ -606,8 +609,15 @@ const Nosotros = () => {
               </div>
               
               <p className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal mb-5">
-                Potenciar el impacto del laboratorio clínico a través de tecnologías de la información de última generación, conectando de manera amplia a todos los principales actores del sector sanitario implicados en la prevención y recuperación de la salud de los pacientes de nuestros clientes.Nuestras soluciones cubren las necesidades de los laboratorios modernos en los circuitos: administrativos, preanalíticos, analíticos, post-analíticos y de gerenciamiento. Somos líderes en interoperabilidad y ofrecemos productos sólidos, flexibles, escalables, y que funcionan en todas las plataformas.
-                LIS, nuestro sistema de gestión para laboratorios de análisis clínicos, es la primera solución de estas características en la nube.
+                Potenciar el impacto del laboratorio clínico a través de tecnologías de la información de última generación, conectando de manera amplia a todos los principales actores del sector sanitario implicados en la prevención y recuperación de la salud de los pacientes de nuestros clientes.
+                <br />
+                <br />
+                Nuestras soluciones cubren las necesidades de los laboratorios modernos en los circuitos: administrativos, preanalíticos, analíticos, post-analíticos y de gerenciamiento. Somos líderes en interoperabilidad y ofrecemos productos sólidos, flexibles, escalables, y que funcionan en todas las plataformas.
+                <br />
+                <br />
+                <strong>
+                  LIS, nuestro sistema de gestión para laboratorios de análisis clínicos, es la primera solución de estas características en la nube.
+                </strong>
               </p>
 
             </div>
