@@ -685,7 +685,7 @@ const Home = () => {
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="50">
-              Qué nos hace diferentes
+              Somos tu partner para la mejora contínua en la atención de los pacientes en el laboratorio.
             </h2>
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-4" data-aos="zoom-in" data-aos-delay="100">
               Por qué elegirnos

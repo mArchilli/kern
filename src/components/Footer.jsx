@@ -102,16 +102,7 @@ const Footer = () => {
             <p className="text-white/80 text-sm">
               &copy; {currentYear} Kern IT. Todos los derechos reservados.
             </p>
-            <div className="flex flex-col items-start md:items-end gap-2 w-full md:w-auto">
-              
-              <div className="text-[12px] text-white/80">
-                Desarrollado por
-                {' '}
-                <a href="https://archillimatias.dev" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#D94B45]">Archilli Matias</a>
-                {' '}y{' '}
-                <a href="https://comollileon.dev" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#D94B45]">Comolli Leon</a>
-              </div>
-            </div>
+            <div className="flex flex-col items-start md:items-end gap-2 w-full md:w-auto" />
           </div>
         </div>
       </div>

@@ -79,7 +79,7 @@ const Contacto = () => {
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-gray-900" data-aos="fade-up" data-aos-delay="50">Conectemos para potenciar tu laboratorio</h1>
-            <p className="mt-4 text-lg text-gray-600" data-aos="fade-up" data-aos-delay="120">Contanos en qué estás y diseñamos juntos un plan para mejorar la experiencia del paciente.</p>
+            <p className="mt-4 text-lg text-gray-600" data-aos="fade-up" data-aos-delay="120">Diseñemos juntos un plan para mejorar la experiencia del paciente.</p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">

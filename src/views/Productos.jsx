@@ -202,10 +202,10 @@ const Productos = () => {
           </div>
 
           <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900" data-aos="fade-up" data-aos-delay="100">
-            Impulsá tu laboratorio con nuestra suite
+            Enfocados junto a los laboratorios de análisis clínicos para mejorar la calidad de atención al paciente.
           </h1>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="150">
-            Soluciones diseñadas para optimizar procesos, elevar la calidad de atención y tomar mejores decisiones con datos reales.
+            Nuestra experiencia de más de 20 años en el sector de la salud contribuye para que nuestro servicio y soluciones se adapten fácilmente a las necesidades de nuestros clientes y a la velocidad que requiere el mercado.
           </p>
 
           {/* Métricas de confianza */}
@@ -243,10 +243,10 @@ const Productos = () => {
   <div className="max-w-7xl mx-auto rounded-2xl border border-[#E7EBEA] p-8 sm:p-10 text-center" data-aos="fade-up">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">¿Querés conocer más en detalle?</h2>
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-            Descargá las fichas técnicas o escribinos y armamos una demo enfocada en tus procesos.
+            Contactanos y un especialista te asesorará para encontrar lo que mejor se adapta a tus necesidades.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <PillButton to="/contacto" variant="primary">Pedir una demo</PillButton>
+            <PillButton to="/contacto" variant="primary">Contactanos</PillButton>
           </div>
         </div>
       </section>
