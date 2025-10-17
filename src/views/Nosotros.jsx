@@ -575,7 +575,7 @@ const Nosotros = () => {
           </div>
 
           {/* Cards grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
             {/* Visión */}
             <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-8 xl:p-9 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-6">
@@ -622,9 +622,9 @@ const Nosotros = () => {
 
             </div>
 
-            {/* Valores */}
-            <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-8 xl:p-9 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center gap-4 mb-6">
+            {/* Valores (horizontal y a lo ancho de las dos columnas) */}
+            <div className="rounded-3xl bg-white border-2 border-[#D94B45]/20 p-8 xl:p-9 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 lg:col-span-2 lg:flex lg:items-start lg:gap-8">
+              <div className="flex items-center gap-4 mb-6 lg:mb-0 lg:flex-shrink-0">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] text-white flex items-center justify-center">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
