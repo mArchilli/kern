@@ -399,23 +399,7 @@ const Nosotros = () => {
                     ))}
                   </div>
 
-                  {/* Features adicionales */}
-                  <div className="pt-5 border-t border-gray-100">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      {[
-                        'Transformación digital',
-                        'Innovación continua',
-                        'Soporte 24/7'
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#D94B45]/10">
-                            <svg className="h-3.5 w-3.5 text-[#D94B45]" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                          </span>
-                          <span className="font-medium">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  {/* Bloque de “features adicionales” eliminado a pedido */}
                 </div>
               </div>
             </div>
@@ -605,7 +589,7 @@ const Nosotros = () => {
               </div>
               
               <p className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal mb-5">
-                Ser líderes en la transformación digital de laboratorios y centros de diagnóstico, constituyéndose en su principal socio de negocios, ofreciendo las soluciones más innovadoras y con la mejor propuesta de valor. Ser el principal proveedor estratégico de los laboratorios de análisis clínicos en Latam, aplicando las mejores y más avanzadas prácticas de gestión de la información en el sector de salud hasta finales de la década de 2020.
+                Ser líderes en la transformación digital de laboratorios y centros de diagnóstico, constituyéndose en su principal socio de negocios, ofreciendo las soluciones más innovadoras y con la mejor propuesta de valor. Ser el principal proveedor estratégico de los laboratorios de análisis clínicos en Latam, aplicando las mejores y más avanzadas prácticas de gestión de la información en el sector de salud hasta finales de la década de 2020.
               </p>
 
             </div>
