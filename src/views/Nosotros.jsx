@@ -77,12 +77,7 @@ const TeamCarousel = () => {
                   <img src={p.img} alt={p.name} className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#D94B45]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#D94B45] transition-colors">{p.name}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {p.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-600 group-hover:bg-[#D94B45]/10 group-hover:text-[#D94B45] transition-colors">{tag}</span>
-                  ))}
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-0 group-hover:text-[#D94B45] transition-colors">{p.name}</h3>
               </div>
             </div>
           ))}
@@ -467,21 +462,12 @@ const Nosotros = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#D94B45]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
-                  {/* Nombre + ícono tech */}
-                  <div className="flex items-center gap-3 mb-3">
+                  {/* Nombre + ícono */}
+                  <div className="flex items-center gap-3 mb-0">
                     <div className="h-9 w-9 rounded-xl bg-[#D94B45]/10 text-[#D94B45] flex items-center justify-center">
                       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 8a4 4 0 014-4h8a4 4 0 014 4v8a4 4 0 01-4 4H8a4 4 0 01-4-4V8zm6 1a1 1 0 100 2h4a1 1 0 100-2h-4z"/></svg>
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#D94B45] transition-colors">{p.name}</h3>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {p.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-700 border border-[#E7EBEA]">
-                        {tag}
-                      </span>
-                    ))}
                   </div>
                 </div>
               </div>
@@ -601,12 +587,7 @@ const Nosotros = () => {
               Visión, Misión y Valores
             </h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
-              La innovación es clave para mejorar la rentabilidad para nuestros clientes. Innovamos para satisfacer necesidades y potencializar resultados. Nuestras soluciones están siempre a la vanguardia tecnológicas. Sentimos una gran pasión por el mercado de salud y actuamos con fuerte propósito de apoyar proactivamente, anticipamos las necesidades de nuestros clientes para sostener su evolución de forma continuada. Entregamos en tiempo y forma lo que nos comprometemos, somos un 1% mejores cada día.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mt-4">
-              Hablamos sin vueltas y sólo prometemos lo que sabemos que vamos a cumplir.
-            </p>
+            {/* Texto bajo el título removido según pedido */}
           </div>
 
           {/* Cards grid */}
@@ -626,23 +607,7 @@ const Nosotros = () => {
               <p className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal mb-5">
                 Ser líderes en la transformación digital de laboratorios y centros de diagnóstico, constituyéndose en su principal socio de negocios, ofreciendo las soluciones más innovadoras y con la mejor propuesta de valor. Ser el principal proveedor estratégico de los laboratorios de análisis clínicos en Latam, aplicando las mejores y más avanzadas prácticas de gestión de la información en el sector de salud hasta finales de la década de 2020.
               </p>
-              
-              <div className="space-y-2 pt-4 border-t border-gray-100">
-                {[
-                  'Liderar la transformación digital del sector',
-                  'Ser proveedor estratégico en LATAM',
-                  'Innovación constante con foco en valor'
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#D94B45]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-[#D94B45]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 leading-relaxed">{item}</span>
-                  </div>
-                ))}
-              </div>
+
             </div>
 
             {/* Misión */}
@@ -660,23 +625,7 @@ const Nosotros = () => {
                 Potenciar el impacto del laboratorio clínico a través de tecnologías de la información de última generación, conectando de manera amplia a todos los principales actores del sector sanitario implicados en la prevención y recuperación de la salud de los pacientes de nuestros clientes.Nuestras soluciones cubren las necesidades de los laboratorios modernos en los circuitos: administrativos, preanalíticos, analíticos, post-analíticos y de gerenciamiento. Somos líderes en interoperabilidad y ofrecemos productos sólidos, flexibles, escalables, y que funcionan en todas las plataformas.
                 LIS, nuestro sistema de gestión para laboratorios de análisis clínicos, es la primera solución de estas características en la nube.
               </p>
-              
-              <div className="space-y-2 pt-4 border-t border-gray-100">
-                {[
-                  'Conectar todo el ecosistema de salud',
-                  'Interoperabilidad estándar (HL7 / FHIR)',
-                  'LIS cloud-first, seguro y escalable'
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#D94B45]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-[#D94B45]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 leading-relaxed">{item}</span>
-                  </div>
-                ))}
-              </div>
+
             </div>
 
             {/* Valores */}
@@ -690,26 +639,15 @@ const Nosotros = () => {
                 <h3 className="text-3xl font-bold text-gray-900">Valores</h3>
               </div>
 
-              <p className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal">
-                El paciente en primer plano. Somos aliados de nuestros clientes para alcanzar los más altos estándares de calidad de atención a los pacientes. Gestión de relaciones con nuestros clientes basada en la confidencialidad, transparencia y seguridad para el paciente.
-                Educación continua para el desarrollo de talentos y el trabajo en equipo, potenciando el talento colectivo.
-              </p>
-
-              <div className="space-y-2 pt-4 border-t border-gray-100">
-                {[
-                  'Compromiso y participación activa de todo el staff en la ética en los negocios, respeto personal y la excelencia profesional.',
-                  'Diversidad e inclusión es una parte consciente de todos los empleados de la compañía y de la forma que manejamos nuestro negocio.',
-                  'Enfoque en los procesos mediante el trabajo en equipo, con el fin de obtener altos estándares de calidad y productos tecnológicamente innovadores.'
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#D94B45]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-[#D94B45]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 leading-relaxed">{item}</span>
-                  </div>
-                ))}
+              <div className="text-base lg:text-[15px] text-gray-600 leading-relaxed lg:leading-normal whitespace-pre-line">
+Nos exigimos Creatividad, Innovación, liderazgo en Diseño, Desarrollo e Implementación de Sistemas de Gestión en la industria de la Salud con un nivel de Calidad de Excelencia. La Política de la calidad de Kern IT tiene como base los siguientes principios:
+Cumplir las expectativas de Calidad de nuestros Clientes.
+Ofrecer productos y servicios conformes a las especificaciones y requisitos establecidos.
+Promover la Gestión de la Calidad en todos los niveles y en todos los procesos de la Empresa.
+Asegurar la difusión y comprensión de los contenidos del Sistema de Gestión de la Calidad, incluida esta Política de Calidad, a fin de que todos puedan cumplir con los compromisos formulados.
+Impulsar un management y equipo de trabajo comprometido con la Calidad, con el fin de asegurar el futuro de la Empresa y su desarrollo.
+Priorizar la Mejora Continua en la Gestión de la Calidad, para aumentar la eficiencia y eficacia de todas nuestras operaciones.
+Establecer un alto grado de confianza, colaboración y compromiso con todos nuestros clientes en el ámbito de la Calidad.
               </div>
             </div>
           </div>
@@ -749,11 +687,10 @@ const Nosotros = () => {
                 'Impulsar un management y equipo de trabajo comprometido con la Calidad, con el fin de asegurar el futuro de la Empresa y su desarrollo.',
                 'Priorizar la Mejora Continua en la Gestión de la Calidad, para aumentar la eficiencia y eficacia de todas nuestras operaciones.',
                 'Establecer un alto grado de confianza, colaboración y compromiso con todos nuestros clientes en el ámbito de la Calidad.',
-                'Asegurar el futuro y el desarrollo de la empresa a través de la calidad',
               ].map((item, i) => (
                 <div 
                   key={i} 
-                  className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 hover:bg-[#D94B45]/5 transition-all duration-200 hover:scale-105"
+                  className={`flex items-start gap-4 p-5 rounded-2xl bg-gray-50 hover:bg-[#D94B45]/5 transition-all duration-200 hover:scale-105 ${i === 6 ? 'md:col-span-2 md:max-w-2xl md:mx-auto' : ''}`}
                 >
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D94B45] to-[#c7413c] text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
                     {i + 1}
@@ -763,13 +700,7 @@ const Nosotros = () => {
               ))}
             </div>
 
-            {/* Footer con badge de certificación */}
-            <div className="mt-10 pt-8 border-t border-gray-100 flex items-center justify-center gap-3">
-              <svg className="w-6 h-6 text-[#D94B45]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="text-gray-600 font-medium">Certificados en estándares internacionales de calidad</span>
-            </div>
+            {/* Footer de certificación removido según pedido */}
           </div>
         </div>
       </section>

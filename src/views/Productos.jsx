@@ -219,7 +219,7 @@ const Productos = () => {
             Contactanos y un especialista te asesorará para encontrar lo que mejor se adapta a tus necesidades.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <PillButton to="/contacto" variant="primary">Pedir una demo</PillButton>
+            <PillButton to="/contacto" variant="primary">Contactanos</PillButton>
           </div>
         </div>
       </section>
