@@ -57,16 +57,16 @@ const ProductCard = ({ p, index }) => {
     <article
       ref={ref}
       style={{ transitionDelay: `${index * 100}ms` }}
-      className={`group relative rounded-2xl bg-gradient-to-br from-[#D94B45]/15 to-[#9BA6A1]/15 p-[1px] ${
+      className={`group relative rounded-2xl h-full ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       } transition-all duration-700 ease-out`}
     >
-      <div className="relative rounded-2xl bg-white border border-[#E7EBEA] shadow-sm overflow-hidden md:group-hover:shadow-xl md:group-hover:-translate-y-1.5 transition-all duration-300">
+      <div className="relative rounded-2xl bg-white border border-[#E7EBEA] shadow-sm overflow-hidden md:group-hover:shadow-xl md:group-hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full">
         {p.badge && (
           <span className="absolute top-4 left-4 z-10 inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[#D94B45]/10 text-[#D94B45] border border-[#D94B45]/20">{p.badge}</span>
         )}
         <ImageWithFallback src={p.imagen} alt={p.nombre} />
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-1">
           <h3 className="text-xl font-semibold text-gray-900">{p.nombre}</h3>
           <p className="mt-2 text-gray-700 text-sm leading-relaxed">{p.resumen}</p>
 
@@ -103,6 +103,9 @@ const ProductCard = ({ p, index }) => {
             </div>
           )}
 
+          {/* Spacer flexible para empujar la botonera hacia el fondo cuando hay espacio, sin perder separación mínima */}
+          <div className="flex-1" />
+
           <div className="mt-6 flex flex-wrap gap-3">
             <PillButton href={p.pdf} target="_blank" rel="noopener noreferrer" variant="primary">Descargar PDF</PillButton>
             <PillButton to="/contacto" variant="secondary">Consultar</PillButton>
@@ -123,7 +126,6 @@ const Productos = () => {
       tags: [],
       imagen: imgLis,
       pdf: pdfLis,
-      badge: 'Más elegido',
       features: [],
       ideal: [],
     },
@@ -135,7 +137,6 @@ const Productos = () => {
       tags: [],
       imagen: imgBi,
       pdf: pdfBi,
-      badge: 'Novedad',
       features: [],
       ideal: [],
     },
