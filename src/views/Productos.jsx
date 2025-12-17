@@ -18,13 +18,15 @@ import pdfAp from '../assets/Productos/ES-BROCHURE-AP.pdf'
 const ImageWithFallback = ({ src, alt }) => {
   const [error, setError] = useState(false)
   return (
-    <div className="relative w-full h-48 bg-white overflow-hidden rounded-t-2xl">
+    <div className="relative w-full h-56 bg-white overflow-hidden rounded-t-2xl">
       {!error ? (
         <img
           src={src}
           alt={alt}
           onError={() => setError(true)}
-          className="w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-[1.05]"
+          loading="lazy"
+          style={{ imageRendering: 'crisp-edges' }}
+          className="w-full h-full object-contain transition-transform duration-500 md:group-hover:scale-[1.05]"
         />
       ) : (
         <div className="w-full h-full bg-gradient-to-br from-[#F7F9F8] to-white flex items-center justify-center text-sm text-gray-500">
@@ -179,7 +181,7 @@ const Productos = () => {
             Nuestros productos.
           </h1>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="150">
-            Brindamos soluciones a nuestros clientes para el proceso completo preanalitico, módulo de extracción, autogestión por parte de los pacientes, y pre check-in para optimizar los tiempos de atención.
+            Brindamos soluciones a nuestros clientes para el proceso preanalítico completo, módulo de extracción, autogestión por parte de los pacientes, y pre check-in para optimizar los tiempos de atención.
           </p>
 
           {/* Métricas de confianza */}

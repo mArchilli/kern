@@ -11,7 +11,7 @@ const MobileStackCards = () => {
       description:
         'La tecnología debe contemplar todas las necesidades del paciente para brindarle una mejor experiencia.',
       icon:
-        'M9 5H7a2 2 0 00-2 2v12a2 2 0 00-2 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 00 2-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+        'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
       link: '/productos',
       cta: 'Ver prestaciones',
       gradient: 'from-[#D94B45]/10 to-[#D94B45]/5',
@@ -574,13 +574,13 @@ const Home = () => {
           {/* Header de sección */}
           <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="50">
-              Una solucion focalizada en mejorar la calidad de atencion al paciente.
+              Una solución focalizada en mejorar la calidad de atención al paciente.
             </h2>
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-4" data-aos="zoom-in" data-aos-delay="100">
               Soluciones integrales
             </span>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
-              Nuestra experiencia de mas de 20 años en el sector de la salud contribuyen para que nuestro servicio y soluciones se adapten facilmente a las necesidades de nuestros clientes y a la velocidad que requiere el mercado.
+              Nuestra experiencia de más de 20 años en el sector de la salud contribuyen para que nuestro servicio y soluciones se adapten fácilmente a las necesidades de nuestros clientes y a la velocidad que requiere el mercado.
             </p>
           </div>
 
@@ -603,7 +603,7 @@ const Home = () => {
                 {
                   title: 'Prestaciones',
                   description: 'La tecnología debe contemplar todas las necesidades del paciente para brindarle una mejor experiencia.',
-                  icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 00-2 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 00 2-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+                  icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
                   link: '/productos',
                   cta: 'Ver prestaciones',
                   gradient: 'from-[#D94B45]/5 to-[#D94B45]/10'
@@ -690,25 +690,25 @@ const Home = () => {
               {
                 icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 0 0-3.86.517l-.318.158a6 6 0 0 1-3.86.517L6.05 15.21a2 2 0 0 0-1.806.547M8 4h8l-1 1v5.172a2 2 0 0 0 .586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 0 0 9 10.172V5L8 4z',
                 title: 'Laboratorio de calidad',
-                description: 'La experiencia del paciente y la capacidad de procesar el volumen de operaciones son claves',
+                description: 'La experiencia del paciente y la capacidad de procesar el volumen de operaciones son claves.',
                 number: '01'
               },
               {
                 icon: 'M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
                 title: 'Experiencia en el rubro',
-                description: 'Desde hace mas de 20 años acompañamos a nuestros clientes para mejorar la experiencia del paciente',
+                description: 'Desde hace más de 20 años acompañamos a nuestros clientes para mejorar la experiencia del paciente.',
                 number: '02'
               },
               {
                 icon: 'M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
                 title: 'Resultados precisos',
-                description: 'Anualmente, procesamos mas de 350 millones de estudios.',
+                description: 'Anualmente, procesamos más de 350 millones de estudios.',
                 number: '03'
               },
               {
                 icon: 'M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z',
                 title: 'Personal calificado',
-                description: 'Nuestros profesionales se destacan por su profesionalismo, flexibilidad y adaptacion a una industria en constante evolución.',
+                description: 'Nuestros profesionales se destacan por su profesionalismo, flexibilidad y adaptación a una industria en constante evolución.',
                 number: '04'
               }
             ].map((item, i) => (
