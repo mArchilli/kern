@@ -680,7 +680,7 @@ const Home = () => {
               Por qué elegirnos
             </span>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="150">
-              Acompañamos a nuestros clientes desde hace más de 20 años y somos sus aliados estratégicos para brindar la mejor experiencia del paciente y alcanzar los máximos niveles de satisfacción
+              Acompañamos a nuestros clientes desde hace más de 20 años y somos sus aliados estratégicos para brindar la mejor experiencia del paciente y alcanzar los máximos niveles de satisfacción.
             </p>
           </div>
 
@@ -895,11 +895,11 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="text-center lg:text-left text-white" data-aos="fade-right">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                Llevá la experiencia del paciente al <span className="text-[#D94B45]">siguiente nivel</span>
+                Llevá la experiencia del paciente al <span className="text-[#D94B45]">siguiente nivel.</span>
               </h2>
               
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
-                Entrá en contacto con nuestros especialistas para posicionar al paciente en primer plano y elevar la calidad de atención en tu organización
+                Entrá en contacto con nuestros especialistas para posicionar al paciente en primer plano y elevar la calidad de atención en tu organización.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -945,7 +945,7 @@ const Home = () => {
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Poné al paciente primero</h3>
-                <p className="text-gray-600 leading-relaxed mb-8">Compartinos tus desafíos actuales y te ayudamos a diseñar una experiencia centrada en el paciente</p>
+                <p className="text-gray-600 leading-relaxed mb-8">Compartinos tus desafíos actuales y te ayudamos a diseñar una experiencia centrada en el paciente.</p>
 
                 <div className="space-y-4 mb-8">
                   {['Análisis personalizado de necesidades', 'Flexibilidad y adaptación', 'Soporte continuo'].map((item, i) => (
@@ -975,9 +975,9 @@ const Home = () => {
       <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F7F9F8]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">Somos tu aliado estratégico</h3>
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">Somos tu aliado estratégico.</h3>
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#D94B45]/10 text-[#D94B45] text-sm font-semibold mb-6">Acompañamiento en cada instancia</span>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">Acompañamos a nuestros clientes desde hace más de 20 años y somos sus aliados estratégicos para brindar la mejor experiencia del paciente y alcanzar los máximos niveles de satisfacción</p>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">Acompañamos a nuestros clientes desde hace más de 20 años y somos sus aliados estratégicos para brindar la mejor experiencia del paciente y alcanzar los máximos niveles de satisfacción.</p>
           </div>
 
           <div data-aos="fade-up" data-aos-delay="100">
