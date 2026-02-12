@@ -391,7 +391,7 @@ const Home = () => {
   return (
     <div className="bg-white text-gray-800 ">
       {/*Hero Section */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-start py-8 px-4 sm:py-10 sm:px-6 lg:px-8 lg:pt-16 bg-gradient-to-br from-white via-white to-[#F5F7F6]">
+      <section className="relative overflow-hidden h-screen flex items-start py-8 px-4 sm:py-10 sm:px-6 lg:px-8 lg:pt-16 bg-gradient-to-br from-white via-white to-[#F5F7F6]">
         {/* Gradiente decorativo rojo en esquina superior izquierda */}
         <div className="pointer-events-none absolute top-0 left-0 w-[35rem] h-[35rem] rounded-full bg-[#D94B45]/15 blur-3xl -translate-x-1/3 -translate-y-1/3" />
 
@@ -549,6 +549,26 @@ const Home = () => {
               <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
             </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Clientes */}
+      <section className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F7F9F8] to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up">
+              Clientes que confiaron en nosotros
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#D94B45] to-[#c7413c] mx-auto rounded-full" data-aos="zoom-in" data-aos-delay="100"></div>
+          </div>
+          
+          <div className="relative rounded-3xl overflow-hidden bg-white shadow-xl border border-gray-100 p-6 sm:p-8" data-aos="fade-up" data-aos-delay="150">
+            <img 
+              src="/images/clientes-kern.png" 
+              alt="Clientes que confiaron en Kern IT" 
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>

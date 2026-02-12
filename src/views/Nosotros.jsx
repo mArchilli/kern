@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PillButton from '../components/PillButton'
-import claudioImg from '../assets/Nosotros/kern-claudio.jpg'
 import diegoImg from '../assets/Nosotros/kern-diego.jpg'
 import rodolfoImg from '../assets/Nosotros/kern-rodolfo.jpg'
 
@@ -11,11 +10,6 @@ import rodolfoImg from '../assets/Nosotros/kern-rodolfo.jpg'
 // Carrusel del equipo
 const TeamCarousel = () => {
   const slides = [
-    {
-      img: claudioImg,
-      name: 'Claudio Martín Weisz',
-      tags: ['Estrategia', 'Crecimiento', 'Relación con clientes']
-    },
     {
       img: rodolfoImg,
       name: 'Rodolfo Renner',
@@ -250,13 +244,8 @@ const HorizontalFeatureLoop3 = ({ items }) => {
 }
 
 const Nosotros = () => {
-  // Datos desktop para las 3 cards
+  // Datos desktop para las 2 cards
   const teamDesktop = [
-    {
-      img: claudioImg,
-      name: 'Claudio Martín Weisz',
-      tags: ['Estrategia', 'Crecimiento', 'Relación con clientes']
-    },
     {
       img: rodolfoImg,
       name: 'Rodolfo Renner',
@@ -431,8 +420,8 @@ const Nosotros = () => {
             <TeamCarousel />
           </div>
 
-          {/* Desktop: 3 cards estáticas */}
-          <div className="hidden md:grid grid-cols-3 gap-8">
+          {/* Desktop: 2 cards estáticas centradas */}
+          <div className="hidden md:grid grid-cols-2 gap-8 max-w-4xl mx-auto">
             {teamDesktop.map((p) => (
               <div key={p.name} className="relative rounded-[28px] p-[1px] bg-gradient-to-br from-[#D94B45]/20 via-white to-[#9BA6A1]/20 group transition">
                 <div className="rounded-[26px] bg-white/90 backdrop-blur border border-[#E7EBEA] p-6 h-full shadow-[0_10px_25px_rgba(0,0,0,0.05)] relative overflow-hidden">
