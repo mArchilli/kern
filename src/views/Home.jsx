@@ -553,26 +553,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Clientes */}
-      <section className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F7F9F8] to-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up">
-              Clientes que confiaron en nosotros
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-[#D94B45] to-[#c7413c] mx-auto rounded-full" data-aos="zoom-in" data-aos-delay="100"></div>
-          </div>
-          
-          <div className="relative rounded-3xl overflow-hidden bg-white shadow-xl border border-gray-100 p-6 sm:p-8" data-aos="fade-up" data-aos-delay="150">
-            <img 
-              src="/images/clientes-kern.png" 
-              alt="Clientes que confiaron en Kern IT" 
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Propuesta de Valor  */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
         {/* Animaciones y utilidades */}
@@ -898,6 +878,94 @@ const Home = () => {
               .carousel-indicator.active-indicator { width: 2rem; background-color: #D94B45; }
               .carousel-indicator:not(.active-indicator) { width: 0.5rem; background-color: #D1D5DB; }
             `}</style>
+          </div>
+        </div>
+      </section>
+
+      {/* Clientes - Diseño distintivo */}
+      <section className="relative py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-[#F7F9F8] via-white to-[#F5F7F6]">
+        {/* Elementos decorativos */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#D94B45]/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#D94B45]/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+        
+        {/* Patrón de puntos decorativo */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: 'radial-gradient(circle, #D94B45 1px, transparent 1px)',
+          backgroundSize: '40px 40px'
+        }} />
+
+        <div className="relative max-w-7xl mx-auto">
+          {/* Header asimétrico */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12 lg:mb-16">
+            <div className="text-center lg:text-left" data-aos="fade-right">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Clientes que
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#D94B45] to-[#ff6b64]">
+                  confiaron en nosotros
+                </span>
+              </h2>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:gap-6" data-aos="fade-left">
+              <div className="bg-white rounded-2xl p-6 border-2 border-[#D94B45]/20 shadow-lg flex-1">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-extrabold text-gray-900">+900</div>
+                    <div className="text-sm text-gray-600">Instalaciones activas</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-2xl p-6 border-2 border-[#D94B45]/20 shadow-lg flex-1">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D94B45] to-[#c7413c] flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-extrabold text-gray-900">15</div>
+                    <div className="text-sm text-gray-600">Países en Latam</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Contenedor de imagen con diseño moderno */}
+          <div className="relative" data-aos="zoom-in" data-aos-delay="200">
+            {/* Marco decorativo */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-[#D94B45]/20 via-[#D94B45]/5 to-[#D94B45]/20 rounded-3xl blur-2xl" />
+            
+            {/* Imagen principal */}
+            <div className="relative rounded-3xl overflow-hidden bg-white border-2 border-[#D94B45]/20 shadow-2xl p-4 sm:p-6 lg:p-8">
+              <div className="relative rounded-2xl overflow-hidden bg-white">
+                <img 
+                  src="/images/clientes-kern.png" 
+                  alt="Clientes que confiaron en Kern IT" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+            
+            {/* Elementos decorativos flotantes */}
+            <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-[#D94B45]/10 blur-xl hidden lg:block" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-[#D94B45]/10 blur-xl hidden lg:block" />
+          </div>
+
+          {/* Botones de acción */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-12" data-aos="fade-up" data-aos-delay="300">
+            <PillButton to="/productos" variant="primary">
+              Conocé los productos que ellos eligieron
+            </PillButton>
+            <PillButton to="/contacto" variant="secondary">
+              Hablá con nosotros
+            </PillButton>
           </div>
         </div>
       </section>
